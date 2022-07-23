@@ -4,6 +4,8 @@
  */
 package NewHospital.UI;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Admin
@@ -27,11 +29,12 @@ public class TrangChu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelHinhNen = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         PanelDongHo = new javax.swing.JPanel();
         lblDongHo = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblQuangCao = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        PanelHinhNen = new javax.swing.JPanel();
+        lblHinhNen = new javax.swing.JLabel();
         PanelMenu = new javax.swing.JPanel();
         btnDatLichKham = new javax.swing.JButton();
         btnDanhSachKham = new javax.swing.JButton();
@@ -41,37 +44,20 @@ public class TrangChu extends javax.swing.JFrame {
         btnBaoCaoThongKe = new javax.swing.JButton();
         btnThongTinNhanVien = new javax.swing.JButton();
         btnDangXuat = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        PanelHinhNen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/BackGround2.png"))); // NOI18N
-
-        javax.swing.GroupLayout PanelHinhNenLayout = new javax.swing.GroupLayout(PanelHinhNen);
-        PanelHinhNen.setLayout(PanelHinhNenLayout);
-        PanelHinhNenLayout.setHorizontalGroup(
-            PanelHinhNenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelHinhNenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        PanelHinhNenLayout.setVerticalGroup(
-            PanelHinhNenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelHinhNenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        setPreferredSize(new java.awt.Dimension(1030, 750));
 
         PanelDongHo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PanelDongHo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         PanelDongHo.setPreferredSize(new java.awt.Dimension(100, 35));
 
+        lblDongHo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDongHo.setText("00:00 AM");
 
-        jLabel2.setText("Hệ thống quản lý bệnh viện");
+        lblQuangCao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblQuangCao.setText("Hệ thống quản lý bệnh viện NewHospital");
 
         javax.swing.GroupLayout PanelDongHoLayout = new javax.swing.GroupLayout(PanelDongHo);
         PanelDongHo.setLayout(PanelDongHoLayout);
@@ -80,23 +66,63 @@ public class TrangChu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDongHoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblDongHo)
-                .addContainerGap())
+                .addGap(29, 29, 29))
             .addGroup(PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelDongHoLayout.createSequentialGroup()
                     .addGap(16, 16, 16)
-                    .addComponent(jLabel2)
-                    .addContainerGap(485, Short.MAX_VALUE)))
+                    .addComponent(lblQuangCao)
+                    .addContainerGap(806, Short.MAX_VALUE)))
         );
         PanelDongHoLayout.setVerticalGroup(
             PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelDongHoLayout.createSequentialGroup()
-                .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
             .addGroup(PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelDongHoLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(lblQuangCao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
+        );
+
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(1000, 650));
+
+        PanelHinhNen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblHinhNen.setBackground(new java.awt.Color(255, 255, 255));
+        lblHinhNen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHinhNen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/BackGround2.png"))); // NOI18N
+        lblHinhNen.setToolTipText("");
+        lblHinhNen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblHinhNen.setOpaque(true);
+
+        javax.swing.GroupLayout PanelHinhNenLayout = new javax.swing.GroupLayout(PanelHinhNen);
+        PanelHinhNen.setLayout(PanelHinhNenLayout);
+        PanelHinhNenLayout.setHorizontalGroup(
+            PanelHinhNenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelHinhNenLayout.createSequentialGroup()
+                .addContainerGap(8, Short.MAX_VALUE)
+                .addComponent(lblHinhNen, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        PanelHinhNenLayout.setVerticalGroup(
+            PanelHinhNenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelHinhNenLayout.createSequentialGroup()
+                .addComponent(lblHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jDesktopPane1.setLayer(PanelHinhNen, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(PanelHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         PanelMenu.setBackground(new java.awt.Color(153, 204, 255));
@@ -181,10 +207,10 @@ public class TrangChu extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Logo.png"))); // NOI18N
-        jLabel12.setOpaque(true);
+        lblLogo.setBackground(new java.awt.Color(204, 204, 204));
+        lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Logo.png"))); // NOI18N
+        lblLogo.setOpaque(true);
 
         javax.swing.GroupLayout PanelMenuLayout = new javax.swing.GroupLayout(PanelMenu);
         PanelMenu.setLayout(PanelMenuLayout);
@@ -198,13 +224,13 @@ public class TrangChu extends javax.swing.JFrame {
             .addComponent(btnThongTinNhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnDanhSachKham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnDangXuat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
+            .addComponent(lblLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelMenuLayout.setVerticalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMenuLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDatLichKham, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDanhSachKham, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,10 +247,6 @@ public class TrangChu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PanelMenuLayout.createSequentialGroup()
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 483, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,19 +254,23 @@ public class TrangChu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelDongHo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-                    .addComponent(PanelHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(PanelDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                    .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -253,57 +279,55 @@ public class TrangChu extends javax.swing.JFrame {
     private void btnDatLichKhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatLichKhamActionPerformed
         // TODO add your handling code here:
         DatLichKhamNV datLich = new DatLichKhamNV();
-        datLich.setVisible(true);
-        this.dispose();
+        jDesktopPane1.add(datLich);
+        datLich.show();
     }//GEN-LAST:event_btnDatLichKhamActionPerformed
+
+    private void btnDanhSachKhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDanhSachKhamActionPerformed
+        // TODO add your handling code here:
+        DanhSachKham danhSachKham = new DanhSachKham();
+        jDesktopPane1.add(danhSachKham);
+        danhSachKham.show();
+    }//GEN-LAST:event_btnDanhSachKhamActionPerformed
 
     private void btnThongTinBenhNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongTinBenhNhanActionPerformed
         // TODO add your handling code here:
         QuanLyBenhNhan benhNhan = new QuanLyBenhNhan();
-        benhNhan.setVisible(true);
-        this.dispose();
+        jDesktopPane1.add(benhNhan);
+        benhNhan.show();
     }//GEN-LAST:event_btnThongTinBenhNhanActionPerformed
 
     private void btnKhoDuocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhoDuocActionPerformed
         // TODO add your handling code here:
         KhoDuoc khoDuoc = new KhoDuoc();
-        khoDuoc.setVisible(true);
-        this.dispose();
+        jDesktopPane1.add(khoDuoc);
+        khoDuoc.show();
     }//GEN-LAST:event_btnKhoDuocActionPerformed
 
     private void btnQuanLyThuChiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuanLyThuChiActionPerformed
         // TODO add your handling code here:
         QuanLyThuChi thuChi = new QuanLyThuChi();
-        thuChi.setVisible(true);
-        this.dispose();
+        jDesktopPane1.add(thuChi);
+        thuChi.show();
     }//GEN-LAST:event_btnQuanLyThuChiActionPerformed
 
     private void btnBaoCaoThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaoCaoThongKeActionPerformed
         // TODO add your handling code here:
         BaoCaoThongKe baoCao = new BaoCaoThongKe();
-        baoCao.setVisible(true);
-        this.dispose();
+        jDesktopPane1.add(baoCao);
+        baoCao.show();
     }//GEN-LAST:event_btnBaoCaoThongKeActionPerformed
 
     private void btnThongTinNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongTinNhanVienActionPerformed
         // TODO add your handling code here:
         QuanLyNhanVien nhanVien = new QuanLyNhanVien();
-        nhanVien.setVisible(true);
-        this.dispose();
+        jDesktopPane1.add(nhanVien);
+        nhanVien.show();
     }//GEN-LAST:event_btnThongTinNhanVienActionPerformed
-
-    private void btnDanhSachKhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDanhSachKhamActionPerformed
-        // TODO add your handling code here:
-        DanhSachKham danhSachKham = new DanhSachKham();
-        danhSachKham.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnDanhSachKhamActionPerformed
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
         // TODO add your handling code here:
-        ChaoMung chaoMung = new ChaoMung();
-        chaoMung.setVisible(true);
-        this.dispose();
+        dangXuat();
     }//GEN-LAST:event_btnDangXuatActionPerformed
 
     /**
@@ -353,9 +377,21 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JButton btnQuanLyThuChi;
     private javax.swing.JButton btnThongTinBenhNhan;
     private javax.swing.JButton btnThongTinNhanVien;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel lblDongHo;
+    private javax.swing.JLabel lblHinhNen;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblQuangCao;
     // End of variables declaration//GEN-END:variables
+
+    public void dangXuat() {
+        int dialogResult = JOptionPane.showConfirmDialog(this, "Đăng xuất khỏi chưởng trình ?",
+                "Đăng xuất", JOptionPane.YES_NO_OPTION);
+        if (dialogResult == JOptionPane.YES_OPTION) {
+            ChaoMung chaoMung = new ChaoMung();
+            chaoMung.setVisible(true);
+            this.dispose();
+        }
+    }
+
 }

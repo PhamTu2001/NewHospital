@@ -15,6 +15,7 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
      */
     public DatLichKhamBN() {
         initComponents();
+        
     }
 
     /**
@@ -26,9 +27,6 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelDongHo = new javax.swing.JPanel();
-        lblDongHo = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         PanelThongTin = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtHoTen = new javax.swing.JTextField();
@@ -55,43 +53,15 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
         rdoDatLichTruoc = new javax.swing.JRadioButton();
         rdoKhamTrucTiep = new javax.swing.JRadioButton();
         btnGui = new javax.swing.JButton();
-        PanelMenu2 = new javax.swing.JPanel();
-        btnDatLichKham1 = new javax.swing.JButton();
-        btnDangXuat2 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
 
-        PanelDongHo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        PanelDongHo.setPreferredSize(new java.awt.Dimension(100, 35));
-
-        lblDongHo.setText("00:00 AM");
-
-        jLabel2.setText("Hệ thống quản lý bệnh viện");
-
-        javax.swing.GroupLayout PanelDongHoLayout = new javax.swing.GroupLayout(PanelDongHo);
-        PanelDongHo.setLayout(PanelDongHoLayout);
-        PanelDongHoLayout.setHorizontalGroup(
-            PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDongHoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblDongHo)
-                .addContainerGap())
-            .addGroup(PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PanelDongHoLayout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(jLabel2)
-                    .addContainerGap(518, Short.MAX_VALUE)))
-        );
-        PanelDongHoLayout.setVerticalGroup(
-            PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelDongHoLayout.createSequentialGroup()
-                .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PanelDongHoLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Của Bệnh nhân");
+        setAlignmentX(100.0F);
+        setAlignmentY(50.0F);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         PanelThongTin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -200,7 +170,7 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
                 .addGroup(PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelThongTinLayout.createSequentialGroup()
                         .addComponent(txtHoTen, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -236,7 +206,7 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelThongTinLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(182, 182, 182))
+                .addGap(219, 219, 219))
         );
         PanelThongTinLayout.setVerticalGroup(
             PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,71 +260,19 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
                         .addContainerGap())))
         );
 
-        PanelMenu2.setBackground(new java.awt.Color(153, 204, 255));
-
-        btnDatLichKham1.setBackground(new java.awt.Color(0, 102, 0));
-        btnDatLichKham1.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        btnDatLichKham1.setForeground(new java.awt.Color(255, 255, 255));
-        btnDatLichKham1.setText("Đặt lịch khám");
-        btnDatLichKham1.setEnabled(false);
-        btnDatLichKham1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDatLichKham1ActionPerformed(evt);
-            }
-        });
-
-        btnDangXuat2.setBackground(new java.awt.Color(255, 0, 51));
-        btnDangXuat2.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        btnDangXuat2.setForeground(new java.awt.Color(255, 255, 255));
-        btnDangXuat2.setText("Đăng nhập");
-        btnDangXuat2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDangXuat2ActionPerformed(evt);
-            }
-        });
-
-        jLabel12.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Logo.png"))); // NOI18N
-        jLabel12.setOpaque(true);
-
-        javax.swing.GroupLayout PanelMenu2Layout = new javax.swing.GroupLayout(PanelMenu2);
-        PanelMenu2.setLayout(PanelMenu2Layout);
-        PanelMenu2Layout.setHorizontalGroup(
-            PanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnDatLichKham1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-            .addComponent(btnDangXuat2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        PanelMenu2Layout.setVerticalGroup(
-            PanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMenu2Layout.createSequentialGroup()
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDatLichKham1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnDangXuat2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelMenu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelDongHo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
-                    .addComponent(PanelThongTin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 0, 0)
+                .addComponent(PanelThongTin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PanelThongTin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(PanelMenu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -380,31 +298,14 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGuiActionPerformed
 
-    private void btnDatLichKham1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatLichKham1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDatLichKham1ActionPerformed
-
-    private void btnDangXuat2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuat2ActionPerformed
-        // TODO add your handling code here:
-        DangNhap dangNhap = new DangNhap();
-        dangNhap.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnDangXuat2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelDongHo;
-    private javax.swing.JPanel PanelMenu2;
     private javax.swing.JPanel PanelThongTin;
-    private javax.swing.JButton btnDangXuat2;
-    private javax.swing.JButton btnDatLichKham1;
     private javax.swing.JButton btnGui;
     private javax.swing.JComboBox<String> cboLoaiKham;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -415,7 +316,6 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JSpinner jSpinner3;
-    private javax.swing.JLabel lblDongHo;
     private javax.swing.JRadioButton rdoDatLichTruoc;
     private javax.swing.JRadioButton rdoKhamTrucTiep;
     private javax.swing.JRadioButton rdoNam;
