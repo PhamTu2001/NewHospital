@@ -63,7 +63,7 @@ public class ChaoMung extends javax.swing.JFrame {
         PanelDongHoLayout.setVerticalGroup(
             PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelDongHoLayout.createSequentialGroup()
-                .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelDongHoLayout.createSequentialGroup()
@@ -76,7 +76,6 @@ public class ChaoMung extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\Java3\\BenhVien\\src\\NewHospital\\Icons\\Background1.png")); // NOI18N
         jLabel1.setToolTipText("");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel1.setOpaque(true);
@@ -118,7 +117,7 @@ public class ChaoMung extends javax.swing.JFrame {
 
         btnLogo.setBackground(new java.awt.Color(204, 204, 204));
         btnLogo.setForeground(new java.awt.Color(204, 204, 204));
-        btnLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\Java3\\BenhVien\\src\\NewHospital\\Icons\\Logo.png")); // NOI18N
+        btnLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Logo.png"))); // NOI18N
         btnLogo.setBorderPainted(false);
         btnLogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
