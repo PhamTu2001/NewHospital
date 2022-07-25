@@ -27,7 +27,7 @@ public class DangKy extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        rdoChucVu = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
@@ -44,8 +44,8 @@ public class DangKy extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtSdt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        RdoNhanVien = new javax.swing.JRadioButton();
-        RdoQuanLy = new javax.swing.JRadioButton();
+        rdoNhanVien = new javax.swing.JRadioButton();
+        rdoQuanLy = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,11 +132,18 @@ public class DangKy extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel8.setText("Chức vụ:");
 
-        buttonGroup1.add(RdoNhanVien);
-        RdoNhanVien.setText("Nhân Viên");
+        rdoChucVu.add(rdoNhanVien);
+        rdoNhanVien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rdoNhanVien.setText("Nhân Viên");
 
-        buttonGroup1.add(RdoQuanLy);
-        RdoQuanLy.setText("Ban Quản Lý");
+        rdoChucVu.add(rdoQuanLy);
+        rdoQuanLy.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rdoQuanLy.setText("Ban Quản Lý");
+        rdoQuanLy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoQuanLyActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,15 +168,13 @@ public class DangKy extends javax.swing.JFrame {
                                 .addComponent(txtSdt))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
-                        .addComponent(btnQuayLai, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnQuayLai, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rdoNhanVien))
                         .addGap(51, 51, 51)
-                        .addComponent(btnDangKy, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(RdoNhanVien)
-                        .addGap(54, 54, 54)
-                        .addComponent(RdoQuanLy)
-                        .addGap(101, 101, 101)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rdoQuanLy)
+                            .addComponent(btnDangKy, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -197,10 +202,10 @@ public class DangKy extends javax.swing.JFrame {
                 .addComponent(txtSdt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RdoNhanVien)
-                    .addComponent(RdoQuanLy))
+                    .addComponent(rdoNhanVien)
+                    .addComponent(rdoQuanLy))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnQuayLai, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -269,6 +274,10 @@ public class DangKy extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMatKhau2ActionPerformed
 
+    private void rdoQuanLyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoQuanLyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rdoQuanLyActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -305,11 +314,8 @@ public class DangKy extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton RdoNhanVien;
-    private javax.swing.JRadioButton RdoQuanLy;
     private javax.swing.JButton btnDangKy;
     private javax.swing.JButton btnQuayLai;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -319,6 +325,9 @@ public class DangKy extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.ButtonGroup rdoChucVu;
+    private javax.swing.JRadioButton rdoNhanVien;
+    private javax.swing.JRadioButton rdoQuanLy;
     private javax.swing.JTextField txtHoTen;
     private javax.swing.JPasswordField txtMatKhau;
     private javax.swing.JPasswordField txtMatKhau2;
