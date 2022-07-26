@@ -58,7 +58,7 @@ public class ChaoMung extends javax.swing.JFrame {
         PanelHinhNenLayout.setHorizontalGroup(
             PanelHinhNenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelHinhNenLayout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -88,10 +88,12 @@ public class ChaoMung extends javax.swing.JFrame {
         PanelDongHo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         PanelDongHo.setPreferredSize(new java.awt.Dimension(100, 35));
 
-        lblDongHo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDongHo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblDongHo.setForeground(new java.awt.Color(0, 102, 102));
         lblDongHo.setText("00:00 AM");
 
-        lblQuangCao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblQuangCao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblQuangCao.setForeground(new java.awt.Color(255, 0, 51));
         lblQuangCao.setText("Hệ thống quản lý bệnh viện NewHospital");
 
         javax.swing.GroupLayout PanelDongHoLayout = new javax.swing.GroupLayout(PanelDongHo);
@@ -99,23 +101,16 @@ public class ChaoMung extends javax.swing.JFrame {
         PanelDongHoLayout.setHorizontalGroup(
             PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDongHoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblDongHo)
-                .addGap(29, 29, 29))
-            .addGroup(PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PanelDongHoLayout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(lblQuangCao)
-                    .addContainerGap(806, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(lblQuangCao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         PanelDongHoLayout.setVerticalGroup(
             PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-            .addGroup(PanelDongHoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PanelDongHoLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(lblQuangCao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addComponent(lblQuangCao, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         PanelMenu.setBackground(new java.awt.Color(153, 204, 255));
@@ -159,7 +154,7 @@ public class ChaoMung extends javax.swing.JFrame {
                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(btnDatLichKham, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 384, Short.MAX_VALUE)
                 .addComponent(btnDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
