@@ -56,6 +56,7 @@ public class ChaoMung extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Chào mừng");
 
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1000, 650));
 
