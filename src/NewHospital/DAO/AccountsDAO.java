@@ -21,6 +21,7 @@ public class AccountsDAO {
         //đọc 1 nhân viên từ 1 bản ghi (1 ResultSet)
         public Accounts readForm(ResultSet rs) throws SQLException{
                 Accounts model = new Accounts();
+                model.setId(rs.getInt("ID"));
                 model.setUserName(rs.getString("TaiKhoan"));
                 model.setPassWord(rs.getString("MatKhau"));
                 model.setHoTen(rs.getString("HoTen"));
@@ -78,7 +79,7 @@ public class AccountsDAO {
         String sql="SELECT * FROM ListAccount";
         return selects(sql);      //trong 1 class có thể có 2 method trùng tên (nhưng param khác nhau)
         }
-        // Tìm nhânViên theo Id (MaNV)
+        // Tìm nhânViên theo TaiKhoan (TaiKhoan)
         public Accounts FindIdNV(String id){
             String sql = "SELECT * FROM ListAccount WHERE TaiKhoan = ?";
             List<Accounts> list=selects(sql, id);

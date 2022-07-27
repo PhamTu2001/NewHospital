@@ -10,6 +10,7 @@ package NewHospital.Model;
  * @author ASUS
  */
 public class Accounts {
+        private int id;
         private String userName;
         private String passWord;
         private String hoTen;
@@ -19,13 +20,16 @@ public class Accounts {
     public Accounts() {
     }
 
-    public Accounts(String userName, String passWord, String hoTen, String soDT, boolean vaiTro) {
+    public Accounts(int id, String userName, String passWord, String hoTen, String soDT, boolean vaiTro) {
+        this.id = id;
         this.userName = userName;
         this.passWord = passWord;
         this.hoTen = hoTen;
         this.soDT = soDT;
         this.vaiTro = vaiTro;
     }
+
+    
 
     public String getUserName() {
         return userName;
@@ -65,6 +69,14 @@ public class Accounts {
 
     public void setVaiTro(boolean vaiTro) {
         this.vaiTro = vaiTro;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
         
     

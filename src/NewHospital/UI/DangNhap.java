@@ -2,8 +2,8 @@
 package NewHospital.UI;
 
 import NewHospital.DAO.AccountsDAO;
+import NewHospital.Helper.UserHelper;
 import NewHospital.Helper.dialogHelper;
-import NewHospital.Helper.shareHelper;
 import NewHospital.Model.Accounts;
 import static java.awt.Color.pink;
 import static java.awt.Color.white;
@@ -28,7 +28,7 @@ public class DangNhap extends javax.swing.JFrame {
             if(nv != null){    //nếu taikhoan đúng
                 String matKhau2 = nv.getPassWord();
                 if(matKhau.equals(matKhau2)){  //nếu mật khẩu đúng
-//                    shareHelper.USER = nv;
+                    UserHelper.USER = nv;
                     dialogHelper.alert(this, "Đăng nhập thành công!");
                     this.dispose();
                     TrangChu home = new TrangChu();
