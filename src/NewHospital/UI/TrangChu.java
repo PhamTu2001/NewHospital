@@ -28,9 +28,10 @@ public class TrangChu extends javax.swing.JFrame {
         initComponents();
         startClock();
         this.setLocationRelativeTo(null);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH); //full màn hình
     }
 
-     void startClock() {
+    void startClock() {
         class TimeClock extends Thread {
 
             @Override
@@ -43,8 +44,8 @@ public class TrangChu extends javax.swing.JFrame {
         TimeClock timeClock = new TimeClock();
         timeClock.start();
     }
-    
-         public void openNV() {
+
+    public void openNV() {
         if (shareHelper.authenticated()) {
             QuanLyNhanVien frmNV = new QuanLyNhanVien();
             frmNV.show();
@@ -52,8 +53,8 @@ public class TrangChu extends javax.swing.JFrame {
             dialogHelper.alert(this, "Vui lòng đăng nhập!");
         }
     }
-     
-         public void openX(JInternalFrame x) {
+
+    public void openX(JInternalFrame x) {
         for (JInternalFrame frmChild : jDesktopPane1.getAllFrames()) {
             frmChild.dispose();
         }
@@ -63,7 +64,7 @@ public class TrangChu extends javax.swing.JFrame {
         jDesktopPane1.add(x);
         x.setVisible(true);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -132,7 +133,7 @@ public class TrangChu extends javax.swing.JFrame {
 
         lblHinhNen.setBackground(new java.awt.Color(255, 255, 255));
         lblHinhNen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHinhNen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/BackGround2.png"))); // NOI18N
+        lblHinhNen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Background 2-2.jpg"))); // NOI18N
         lblHinhNen.setToolTipText("");
         lblHinhNen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblHinhNen.setOpaque(true);
@@ -147,7 +148,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
         PanelHinhNenLayout.setVerticalGroup(
             PanelHinhNenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+            .addComponent(lblHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jDesktopPane1.setLayer(PanelHinhNen, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -355,7 +356,6 @@ public class TrangChu extends javax.swing.JFrame {
     private void btnThongTinNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongTinNhanVienActionPerformed
         // TODO add your handling code here:
 
-        
 //        QuanLyNhanVien nhanVien = new QuanLyNhanVien();
 //        jDesktopPane1.add(nhanVien);
 //        nhanVien.show();

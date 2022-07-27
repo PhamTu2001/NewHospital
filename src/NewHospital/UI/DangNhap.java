@@ -44,6 +44,7 @@ public class DangNhap extends javax.swing.JFrame {
         }
         catch (Exception e) {
             dialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+            //System.out.println(e);
         }
  }
     @SuppressWarnings("unchecked")
@@ -112,7 +113,7 @@ public class DangNhap extends javax.swing.JFrame {
 
         jToggleButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 51, 51));
-        jToggleButton1.setText(" Quay lại");
+        jToggleButton1.setText("<-  Quay lại");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
