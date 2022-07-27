@@ -5,8 +5,13 @@
 package NewHospital.UI;
 
 import NewHospital.DAO.AccountsDAO;
+import NewHospital.Helper.dialogHelper;
+import NewHospital.Helper.shareHelper;
 import NewHospital.Model.Accounts;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -21,9 +26,44 @@ public class TrangChu extends javax.swing.JFrame {
      */
     public TrangChu() {
         initComponents();
+        startClock();
         this.setLocationRelativeTo(null);
     }
 
+     void startClock() {
+        class TimeClock extends Thread {
+
+            @Override
+            public void run() {
+                while (true) {
+                    lblDongHo.setText(new SimpleDateFormat("hh:mm:ss a").format(Calendar.getInstance().getTime()));
+                }
+            }
+        }
+        TimeClock timeClock = new TimeClock();
+        timeClock.start();
+    }
+    
+         public void openNV() {
+        if (shareHelper.authenticated()) {
+            QuanLyNhanVien frmNV = new QuanLyNhanVien();
+            frmNV.show();
+        } else {
+            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+        }
+    }
+     
+         public void openX(JInternalFrame x) {
+        for (JInternalFrame frmChild : jDesktopPane1.getAllFrames()) {
+            frmChild.dispose();
+        }
+
+        x.setLocation(this.getWidth() / 2 - x.getWidth() / 2,
+                (this.getHeight() - 20) / 2 - x.getHeight() / 2 - 60);
+        jDesktopPane1.add(x);
+        x.setVisible(true);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -81,6 +121,11 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1000, 650));
+        jDesktopPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jDesktopPane1MouseClicked(evt);
+            }
+        });
 
         PanelHinhNen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -103,7 +148,7 @@ public class TrangChu extends javax.swing.JFrame {
         PanelHinhNenLayout.setVerticalGroup(
             PanelHinhNenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelHinhNenLayout.createSequentialGroup()
-                .addComponent(lblHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                .addComponent(lblHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -264,7 +309,7 @@ public class TrangChu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
                     .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -317,15 +362,28 @@ public class TrangChu extends javax.swing.JFrame {
 
     private void btnThongTinNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongTinNhanVienActionPerformed
         // TODO add your handling code here:
-        QuanLyNhanVien nhanVien = new QuanLyNhanVien();
-        jDesktopPane1.add(nhanVien);
-        nhanVien.show();
+
+        
+//        QuanLyNhanVien nhanVien = new QuanLyNhanVien();
+//        jDesktopPane1.add(nhanVien);
+//        nhanVien.show();
+//        
+        if (shareHelper.authenticated()) {
+            QuanLyNhanVien frmNV = new QuanLyNhanVien();
+            openX(frmNV);
+        } else {
+            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+        }
     }//GEN-LAST:event_btnThongTinNhanVienActionPerformed
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
         // TODO add your handling code here:
         dangXuat();
     }//GEN-LAST:event_btnDangXuatActionPerformed
+
+    private void jDesktopPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDesktopPane1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jDesktopPane1MouseClicked
 
     /**
      * @param args the command line arguments
