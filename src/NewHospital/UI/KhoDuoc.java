@@ -4,6 +4,10 @@
  */
 package NewHospital.UI;
 
+import NewHospital.DAO.KhoDuocDAO;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author MSI GAMING
@@ -15,6 +19,7 @@ public class KhoDuoc extends javax.swing.JInternalFrame {
      */
     public KhoDuoc() {
         initComponents();
+        init();
     }
 
     /**
@@ -44,7 +49,7 @@ public class KhoDuoc extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tblDanhSachKhoDuoc = new javax.swing.JTable();
+        tblKhoDuoc = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -188,8 +193,8 @@ public class KhoDuoc extends javax.swing.JInternalFrame {
         jLabel3.setForeground(new java.awt.Color(255, 51, 51));
         jLabel3.setText("Danh Sách Đặt Thuốc");
 
-        tblDanhSachKhoDuoc.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        tblDanhSachKhoDuoc.setModel(new javax.swing.table.DefaultTableModel(
+        tblKhoDuoc.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        tblKhoDuoc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -211,7 +216,7 @@ public class KhoDuoc extends javax.swing.JInternalFrame {
                 "Mã Thuốc", "Tên Thuốc", "HSD", "Ngày Nhập ", "Ngày Xuất", "Số Lượng", "Ghi Chú"
             }
         ));
-        jScrollPane3.setViewportView(tblDanhSachKhoDuoc);
+        jScrollPane3.setViewportView(tblKhoDuoc);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -554,7 +559,7 @@ public class KhoDuoc extends javax.swing.JInternalFrame {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTable tblDanhSachDatThuoc;
-    private javax.swing.JTable tblDanhSachKhoDuoc;
+    private javax.swing.JTable tblKhoDuoc;
     private javax.swing.JTextArea txtGhiChu;
     private javax.swing.JTextField txtHoVaTen;
     private javax.swing.JTextField txtHoVaTen1;
@@ -565,4 +570,38 @@ public class KhoDuoc extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtNgaySinh1;
     private javax.swing.JTextField txtSoLuong;
     // End of variables declaration//GEN-END:variables
+
+    int row = -1;
+    KhoDuocDAO KDdao = new KhoDuocDAO();
+    
+    public void init(){
+        this.fillTable();
+    }
+    
+    public void fillTable(){
+        DefaultTableModel model = (DefaultTableModel) tblKhoDuoc.getModel();
+        model.setRowCount(0);
+        try {
+            List<NewHospital.Model.KhoDuoc> list = KDdao.selectAll();
+            for (NewHospital.Model.KhoDuoc kd : list) {
+                Object[] row = {
+                    kd.getMaThuoc(),
+                    kd.getTenThuoc(),
+                    kd.getHanSuDung(),
+                    kd.getNgayNhap(),
+                    kd.getNgayXuat(),
+                    kd.getSoLuong(),
+                    kd.getGhiChu()
+                };
+                model.addRow(row);
+            }
+        } 
+        catch (Exception e) {
+            this.alert(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
+
+    private void alert(KhoDuoc aThis, String lỗi_truy_vấn_dữ_liệu) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
