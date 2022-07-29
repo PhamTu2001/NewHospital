@@ -22,12 +22,12 @@ public class TT_BenhNhan {
     private boolean trangThai;
     private boolean loaiBN;
 
-    public TT_BenhNhan(String maBN, String hoTen, boolean gioiTinh, Date ngaySinh, String SDT, String email, String diaChi, String tinhTrangBenh, boolean trangThai, boolean loaiBN) {
+    public TT_BenhNhan(String maBN, String hoTen, boolean gioiTinh, Date ngaySinh, String SoDT, String email, String diaChi, String tinhTrangBenh, boolean trangThai, boolean loaiBN) {
         this.maBN = maBN;
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
-        this.SoDT = SDT;
+        this.SoDT = SoDT;
         this.email = email;
         this.diaChi = diaChi;
         this.tinhTrangBenh = tinhTrangBenh;
@@ -74,7 +74,7 @@ public class TT_BenhNhan {
         return SoDT;
     }
 
-    public void setSoDT(String SDT) {
+    public void setSoDT(String SoDT) {
         this.SoDT = SoDT;
     }
 
