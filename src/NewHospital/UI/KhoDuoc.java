@@ -577,7 +577,7 @@ public class KhoDuoc extends javax.swing.JInternalFrame {
     public void init(){
         this.fillTable();
     }
-    
+    //đổ dữ liệu lên table
     public void fillTable(){
         DefaultTableModel model = (DefaultTableModel) tblKhoDuoc.getModel();
         model.setRowCount(0);

@@ -15,7 +15,7 @@ public class TT_BenhNhan {
     private String hoTen ;
     private boolean gioiTinh;
     private Date ngaySinh ;
-    private String SDT;
+    private String SoDT;
     private String email ;
     private String diaChi ;
     private String tinhTrangBenh ;
@@ -27,7 +27,7 @@ public class TT_BenhNhan {
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
-        this.SDT = SDT;
+        this.SoDT = SDT;
         this.email = email;
         this.diaChi = diaChi;
         this.tinhTrangBenh = tinhTrangBenh;
@@ -54,7 +54,7 @@ public class TT_BenhNhan {
         this.hoTen = hoTen;
     }
 
-    public boolean isGioiTinh() {
+    public boolean getGioiTinh() {
         return gioiTinh;
     }
 
@@ -70,12 +70,12 @@ public class TT_BenhNhan {
         this.ngaySinh = ngaySinh;
     }
 
-    public String getSDT() {
-        return SDT;
+    public String getSoDT() {
+        return SoDT;
     }
 
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
+    public void setSoDT(String SDT) {
+        this.SoDT = SoDT;
     }
 
     public String getEmail() {
@@ -102,7 +102,7 @@ public class TT_BenhNhan {
         this.tinhTrangBenh = tinhTrangBenh;
     }
 
-    public boolean isTrangThai() {
+    public boolean getTrangThai() {
         return trangThai;
     }
 
@@ -110,7 +110,7 @@ public class TT_BenhNhan {
         this.trangThai = trangThai;
     }
 
-    public boolean isLoaiBN() {
+    public boolean getLoaiBN() {
         return loaiBN;
     }
 

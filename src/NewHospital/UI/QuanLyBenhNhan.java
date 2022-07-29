@@ -4,6 +4,11 @@
  */
 package NewHospital.UI;
 
+import NewHospital.DAO.BenhNhanDAO;
+import NewHospital.Model.TT_BenhNhan;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author MSI GAMING
@@ -15,6 +20,7 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
      */
     public QuanLyBenhNhan() {
         initComponents();
+        init();
     }
 
     /**
@@ -34,7 +40,7 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
         txtTimKiem = new javax.swing.JTextField();
         btnTimKiem = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDanhSachNhanVien = new javax.swing.JTable();
+        tblBenhNhan = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -83,8 +89,8 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
         btnTimKiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/search.png"))); // NOI18N
         btnTimKiem.setText("Tìm kiếm");
 
-        tblDanhSachNhanVien.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        tblDanhSachNhanVien.setModel(new javax.swing.table.DefaultTableModel(
+        tblBenhNhan.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        tblBenhNhan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -111,7 +117,7 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
                 "Mã BN", "Họ & Tên ", "Giới tính", "Ngày sinh ", "SĐT", "Địa chỉ", "Tình trạng bệnh", "Trạng thái"
             }
         ));
-        jScrollPane1.setViewportView(tblDanhSachNhanVien);
+        jScrollPane1.setViewportView(tblBenhNhan);
 
         jButton3.setBackground(new java.awt.Color(51, 204, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/step-backward.png"))); // NOI18N
@@ -540,7 +546,7 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTable tblDanhSachNhanVien;
+    private javax.swing.JTable tblBenhNhan;
     private javax.swing.JTextField txtChucVu;
     private javax.swing.JTextArea txtDiaChi;
     private javax.swing.JTextField txtEmail;
@@ -551,4 +557,42 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtSDT;
     private javax.swing.JTextField txtTimKiem;
     // End of variables declaration//GEN-END:variables
+
+    BenhNhanDAO BNdao = new BenhNhanDAO();
+    int row = -1;
+    void init(){
+        //setLocationRelativeTo(null); // đưa cửa sổ ra giữa màn hình
+        this.fillTable(); // đổ dữ liệu nhân viên vào bảng
+        //this.updateStatus(); // cập nhật trạng thái form
+    }
+    void fillTable() {
+        DefaultTableModel model = (DefaultTableModel) tblBenhNhan.getModel();
+        model.setRowCount(0);
+        try {
+            List<TT_BenhNhan> list = BNdao.selectAll();
+            for (TT_BenhNhan bn : list) {
+                Object[] row = {
+                    bn.getMaBN(),
+                    bn.getHoTen(),
+                    bn.getGioiTinh()?"Nam":"Nữ",
+                    bn.getNgaySinh(),
+                    bn.getSoDT(),
+                    bn.getEmail(),
+                    bn.getDiaChi(),
+                    bn.getTinhTrangBenh(),
+                    bn.getTrangThai()?"Đã khám":"Chưa khám",
+                    bn.getLoaiBN()?"Nội trú":"Ngoại trú"
+                    //nv.getVaiTro()?"Trưởng phòng":"Nhân viên"
+                };
+                model.addRow(row);
+            }
+        } 
+        catch (Exception e) {
+            this.alert(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
+
+    private void alert(QuanLyBenhNhan aThis, String lỗi_truy_vấn_dữ_liệu) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
