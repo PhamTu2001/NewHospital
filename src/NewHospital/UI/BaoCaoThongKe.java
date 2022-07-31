@@ -77,20 +77,22 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "STT", "Nội dung", "Người lưu", "Nơi lưu", "Giời gian lưu"
+                "Mã BC", "Nội dung", "Người lưu", "Nơi lưu", "Giời gian lưu"
             }
         ));
         jScrollPane1.setViewportView(tblBaoCaoThongKe);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BÁO CÁO THỐNG KÊ");
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bộ lọc thông tin cần tìm", "Báo Cáo Doanh Thu ", "Báo Cáo Nhân Viên Làm Việc", "Báo Cáo Danh Sách Trang Thiết Bị", "Báo Cáo Thuốc" }));
 
         btnCong1.setBackground(new java.awt.Color(51, 204, 255));
         btnCong1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCong1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/right-arrow.png"))); // NOI18N
+        btnCong1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/tien.png"))); // NOI18N
         btnCong1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCong1ActionPerformed(evt);
@@ -99,7 +101,7 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
 
         btnCuoi.setBackground(new java.awt.Color(51, 204, 255));
         btnCuoi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCuoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/step-backward.png"))); // NOI18N
+        btnCuoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/dau.png"))); // NOI18N
         btnCuoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCuoiActionPerformed(evt);
@@ -108,7 +110,7 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
 
         btnDau.setBackground(new java.awt.Color(51, 204, 255));
         btnDau.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnDau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/step-forward.png"))); // NOI18N
+        btnDau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/cuoi.png"))); // NOI18N
         btnDau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDauActionPerformed(evt);
@@ -117,7 +119,7 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
 
         btnTru1.setBackground(new java.awt.Color(51, 204, 255));
         btnTru1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnTru1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/left-arrow.png"))); // NOI18N
+        btnTru1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/lui.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);

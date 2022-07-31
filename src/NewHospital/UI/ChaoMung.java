@@ -105,6 +105,7 @@ public class ChaoMung extends javax.swing.JFrame {
 
         lblDongHo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblDongHo.setForeground(new java.awt.Color(0, 102, 102));
+        lblDongHo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Clock.png"))); // NOI18N
         lblDongHo.setText("00:00 AM");
 
         lblQuangCao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -119,7 +120,7 @@ public class ChaoMung extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblQuangCao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         PanelDongHoLayout.setVerticalGroup(
@@ -133,6 +134,7 @@ public class ChaoMung extends javax.swing.JFrame {
         btnDatLichKham.setBackground(new java.awt.Color(0, 102, 0));
         btnDatLichKham.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnDatLichKham.setForeground(new java.awt.Color(255, 255, 255));
+        btnDatLichKham.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Add.png"))); // NOI18N
         btnDatLichKham.setText("Đặt lịch khám");
         btnDatLichKham.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +145,7 @@ public class ChaoMung extends javax.swing.JFrame {
         btnDangNhap.setBackground(new java.awt.Color(255, 0, 51));
         btnDangNhap.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnDangNhap.setForeground(new java.awt.Color(255, 255, 255));
+        btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Login.png"))); // NOI18N
         btnDangNhap.setText("Đăng nhập");
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,7 +164,7 @@ public class ChaoMung extends javax.swing.JFrame {
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnDatLichKham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+            .addComponent(lblLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelMenuLayout.setVerticalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +185,7 @@ public class ChaoMung extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(PanelDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 1006, Short.MAX_VALUE)
+            .addComponent(PanelDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

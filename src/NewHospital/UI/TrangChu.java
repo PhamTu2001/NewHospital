@@ -93,6 +93,7 @@ public class TrangChu extends javax.swing.JFrame {
 
         lblDongHo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblDongHo.setForeground(new java.awt.Color(0, 153, 153));
+        lblDongHo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Alarm.png"))); // NOI18N
         lblDongHo.setText("00:00 AM");
 
         lblQuangCao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -141,7 +142,7 @@ public class TrangChu extends javax.swing.JFrame {
         PanelHinhNenLayout.setHorizontalGroup(
             PanelHinhNenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelHinhNenLayout.createSequentialGroup()
-                .addComponent(lblHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
+                .addComponent(lblHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
                 .addContainerGap())
         );
         PanelHinhNenLayout.setVerticalGroup(
@@ -167,6 +168,7 @@ public class TrangChu extends javax.swing.JFrame {
         btnDatLichKham.setBackground(new java.awt.Color(0, 102, 0));
         btnDatLichKham.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnDatLichKham.setForeground(new java.awt.Color(255, 255, 255));
+        btnDatLichKham.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Add.png"))); // NOI18N
         btnDatLichKham.setText("Đặt lịch khám");
         btnDatLichKham.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +179,7 @@ public class TrangChu extends javax.swing.JFrame {
         btnDanhSachKham.setBackground(new java.awt.Color(0, 102, 0));
         btnDanhSachKham.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnDanhSachKham.setForeground(new java.awt.Color(255, 255, 255));
+        btnDanhSachKham.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/List.png"))); // NOI18N
         btnDanhSachKham.setText("Danh sách chờ khám");
         btnDanhSachKham.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,6 +190,7 @@ public class TrangChu extends javax.swing.JFrame {
         btnThongTinBenhNhan.setBackground(new java.awt.Color(0, 102, 0));
         btnThongTinBenhNhan.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnThongTinBenhNhan.setForeground(new java.awt.Color(255, 255, 255));
+        btnThongTinBenhNhan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Clien list.png"))); // NOI18N
         btnThongTinBenhNhan.setText("Thông tin bệnh nhân");
         btnThongTinBenhNhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,6 +201,7 @@ public class TrangChu extends javax.swing.JFrame {
         btnKhoDuoc.setBackground(new java.awt.Color(0, 102, 0));
         btnKhoDuoc.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnKhoDuoc.setForeground(new java.awt.Color(255, 255, 255));
+        btnKhoDuoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Brick house.png"))); // NOI18N
         btnKhoDuoc.setText("Kho dược");
         btnKhoDuoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,6 +212,7 @@ public class TrangChu extends javax.swing.JFrame {
         btnQuanLyThuChi.setBackground(new java.awt.Color(0, 102, 0));
         btnQuanLyThuChi.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnQuanLyThuChi.setForeground(new java.awt.Color(255, 255, 255));
+        btnQuanLyThuChi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Diagram.png"))); // NOI18N
         btnQuanLyThuChi.setText("Quản lý thu chi ");
         btnQuanLyThuChi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,6 +223,7 @@ public class TrangChu extends javax.swing.JFrame {
         btnBaoCaoThongKe.setBackground(new java.awt.Color(0, 102, 0));
         btnBaoCaoThongKe.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnBaoCaoThongKe.setForeground(new java.awt.Color(255, 255, 255));
+        btnBaoCaoThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Bar chart.png"))); // NOI18N
         btnBaoCaoThongKe.setText("Báo cáo thống kê");
         btnBaoCaoThongKe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,6 +234,7 @@ public class TrangChu extends javax.swing.JFrame {
         btnThongTinNhanVien.setBackground(new java.awt.Color(0, 102, 0));
         btnThongTinNhanVien.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnThongTinNhanVien.setForeground(new java.awt.Color(255, 255, 255));
+        btnThongTinNhanVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Card file.png"))); // NOI18N
         btnThongTinNhanVien.setText("Thông tin nhân viên");
         btnThongTinNhanVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,6 +245,7 @@ public class TrangChu extends javax.swing.JFrame {
         btnDangXuat.setBackground(new java.awt.Color(255, 0, 51));
         btnDangXuat.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnDangXuat.setForeground(new java.awt.Color(255, 255, 255));
+        btnDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Log out.png"))); // NOI18N
         btnDangXuat.setText("Đăng xuất");
         btnDangXuat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,14 +302,14 @@ public class TrangChu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE))
-            .addComponent(PanelDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 1028, Short.MAX_VALUE)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE))
+            .addComponent(PanelDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 1033, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
                     .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))

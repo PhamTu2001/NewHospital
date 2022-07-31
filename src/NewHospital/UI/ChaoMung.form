@@ -30,7 +30,7 @@
               <Component id="jDesktopPane1" min="-2" pref="838" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
-          <Component id="PanelDongHo" alignment="0" pref="1006" max="32767" attributes="0"/>
+          <Component id="PanelDongHo" alignment="0" pref="1007" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -140,7 +140,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblQuangCao" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="lblDongHo" min="-2" pref="86" max="-2" attributes="0"/>
+                  <Component id="lblDongHo" min="-2" pref="118" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -160,6 +160,9 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="0" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/NewHospital/Icons/Clock.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="00:00 AM"/>
           </Properties>
@@ -189,7 +192,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="btnDatLichKham" alignment="0" max="32767" attributes="0"/>
               <Component id="btnDangNhap" alignment="0" max="32767" attributes="0"/>
-              <Component id="lblLogo" alignment="1" pref="162" max="32767" attributes="0"/>
+              <Component id="lblLogo" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -216,6 +219,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/NewHospital/Icons/Add.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="&#x110;&#x1eb7;t l&#x1ecb;ch kh&#xe1;m"/>
           </Properties>
           <Events>
@@ -232,6 +238,9 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/NewHospital/Icons/Login.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng nh&#x1ead;p"/>
           </Properties>

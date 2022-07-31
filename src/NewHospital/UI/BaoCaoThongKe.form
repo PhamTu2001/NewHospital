@@ -89,7 +89,7 @@
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="30">
-                    <Column editable="true" title="STT" type="java.lang.Object"/>
+                    <Column editable="true" title="M&#xe3; BC" type="java.lang.Object"/>
                     <Column editable="true" title="N&#x1ed9;i dung" type="java.lang.Object"/>
                     <Column editable="true" title="Ng&#x1b0;&#x1edd;i l&#x1b0;u" type="java.lang.Object"/>
                     <Column editable="true" title="N&#x1a1;i l&#x1b0;u" type="java.lang.Object"/>
@@ -106,10 +106,18 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="0"/>
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="B&#xc1;O C&#xc1;O TH&#x1ed0;NG K&#xca;"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBox1">
@@ -171,7 +179,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/NewHospital/Icons/right-arrow.png"/>
+                  <Image iconType="3" name="/NewHospital/Icons/tien.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -187,7 +195,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/NewHospital/Icons/step-backward.png"/>
+                  <Image iconType="3" name="/NewHospital/Icons/dau.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -203,7 +211,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/NewHospital/Icons/step-forward.png"/>
+                  <Image iconType="3" name="/NewHospital/Icons/cuoi.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -219,7 +227,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/NewHospital/Icons/left-arrow.png"/>
+                  <Image iconType="3" name="/NewHospital/Icons/lui.png"/>
                 </Property>
               </Properties>
             </Component>
