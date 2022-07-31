@@ -11,9 +11,7 @@ import static java.awt.Color.white;
 
 public class DangNhap extends javax.swing.JFrame {
 
-    /**
-     * Creates new form DangNhap
-     */
+
     public DangNhap() {
         initComponents();
         this.setLocationRelativeTo(null);
