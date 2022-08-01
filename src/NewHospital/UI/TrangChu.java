@@ -142,7 +142,7 @@ public class TrangChu extends javax.swing.JFrame {
         PanelHinhNenLayout.setHorizontalGroup(
             PanelHinhNenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelHinhNenLayout.createSequentialGroup()
-                .addComponent(lblHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+                .addComponent(lblHinhNen, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE)
                 .addContainerGap())
         );
         PanelHinhNenLayout.setVerticalGroup(
@@ -302,7 +302,7 @@ public class TrangChu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE))
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE))
             .addComponent(PanelDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 1033, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -341,22 +341,22 @@ public class TrangChu extends javax.swing.JFrame {
 
     private void btnThongTinBenhNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongTinBenhNhanActionPerformed
         // TODO add your handling code here:
-        if(UserHelper.authenticated()){
+//        if(UserHelper.authenticated()){
             QuanLyBenhNhan benhNhan = new QuanLyBenhNhan();
             openX(benhNhan);
-        }else {
-            dialogHelper.alert(this, "Vui lòng đăng nhập!");
-        }
+//        }else {
+//            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+//        }
     }//GEN-LAST:event_btnThongTinBenhNhanActionPerformed
 
     private void btnKhoDuocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhoDuocActionPerformed
         // TODO add your handling code here:
-        if(UserHelper.authenticated()){
-            KhoDuoc khoDuoc = new KhoDuoc();
+        //if(UserHelper.authenticated()){
+            KhoDuocUI khoDuoc = new KhoDuocUI();
             openX(khoDuoc);
-        }else {
-            dialogHelper.alert(this, "Vui lòng đăng nhập!");
-        }
+        //}else {
+            //dialogHelper.alert(this, "Vui lòng đăng nhập!");
+        //}
     }//GEN-LAST:event_btnKhoDuocActionPerformed
 
     private void btnQuanLyThuChiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuanLyThuChiActionPerformed

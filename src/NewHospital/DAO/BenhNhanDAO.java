@@ -31,10 +31,8 @@ public class BenhNhanDAO {
                     entity.setNgaySinh(rs.getDate("NgaySinh"));
                     entity.setSoDT(rs.getString("SoDT"));
                     entity.setEmail(rs.getString("Email"));
+                    entity.setCmnd(rs.getString("CMND"));
                     entity.setDiaChi(rs.getString("DiaChi"));
-                    entity.setTinhTrangBenh(rs.getString("TinhTrangBenh"));
-                    entity.setTrangThai(rs.getBoolean("TrangThai"));
-                    entity.setLoaiBN(rs.getBoolean("LoaiBenhNhan"));
                     list.add(entity);
                 }
             } 

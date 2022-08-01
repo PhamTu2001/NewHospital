@@ -17,25 +17,21 @@ public class TT_BenhNhan {
     private Date ngaySinh ;
     private String SoDT;
     private String email ;
+    private String cmnd;
     private String diaChi ;
-    private String tinhTrangBenh ;
-    private boolean trangThai;
-    private boolean loaiBN;
+    
+    public TT_BenhNhan() {
+    }
 
-    public TT_BenhNhan(String maBN, String hoTen, boolean gioiTinh, Date ngaySinh, String SoDT, String email, String diaChi, String tinhTrangBenh, boolean trangThai, boolean loaiBN) {
+    public TT_BenhNhan(String maBN, String hoTen, boolean gioiTinh, Date ngaySinh, String SoDT, String email, String cmnd, String diaChi) {
         this.maBN = maBN;
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
         this.SoDT = SoDT;
         this.email = email;
+        this.cmnd = cmnd;
         this.diaChi = diaChi;
-        this.tinhTrangBenh = tinhTrangBenh;
-        this.trangThai = trangThai;
-        this.loaiBN = loaiBN;
-    }
-
-    public TT_BenhNhan() {
     }
 
     public String getMaBN() {
@@ -54,7 +50,7 @@ public class TT_BenhNhan {
         this.hoTen = hoTen;
     }
 
-    public boolean getGioiTinh() {
+    public boolean isGioiTinh() {
         return gioiTinh;
     }
 
@@ -86,6 +82,14 @@ public class TT_BenhNhan {
         this.email = email;
     }
 
+    public String getCmnd() {
+        return cmnd;
+    }
+
+    public void setCmnd(String cmnd) {
+        this.cmnd = cmnd;
+    }
+
     public String getDiaChi() {
         return diaChi;
     }
@@ -93,31 +97,9 @@ public class TT_BenhNhan {
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
     }
-
-    public String getTinhTrangBenh() {
-        return tinhTrangBenh;
-    }
-
-    public void setTinhTrangBenh(String tinhTrangBenh) {
-        this.tinhTrangBenh = tinhTrangBenh;
-    }
-
-    public boolean getTrangThai() {
-        return trangThai;
-    }
-
-    public void setTrangThai(boolean trangThai) {
-        this.trangThai = trangThai;
-    }
-
-    public boolean getLoaiBN() {
-        return loaiBN;
-    }
-
-    public void setLoaiBN(boolean loaiBN) {
-        this.loaiBN = loaiBN;
-    }
     
-    
+
+
+
     
 }

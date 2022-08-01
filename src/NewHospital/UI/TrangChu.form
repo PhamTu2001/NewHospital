@@ -27,7 +27,7 @@
           <Group type="102" attributes="0">
               <Component id="PanelMenu" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jDesktopPane1" pref="814" max="32767" attributes="0"/>
+              <Component id="jDesktopPane1" pref="819" max="32767" attributes="0"/>
           </Group>
           <Component id="PanelDongHo" pref="1033" max="32767" attributes="0"/>
       </Group>
@@ -151,7 +151,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="lblHinhNen" pref="806" max="32767" attributes="0"/>
+                      <Component id="lblHinhNen" pref="811" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>

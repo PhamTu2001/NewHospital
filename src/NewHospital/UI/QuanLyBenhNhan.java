@@ -7,6 +7,7 @@ package NewHospital.UI;
 import NewHospital.DAO.BenhNhanDAO;
 import NewHospital.Model.TT_BenhNhan;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -637,25 +638,19 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
                 Object[] row = {
                     bn.getMaBN(),
                     bn.getHoTen(),
-                    bn.getGioiTinh()?"Nam":"Nữ",
+                    bn.isGioiTinh()?"Nam":"Nữ",
                     bn.getNgaySinh(),
                     bn.getSoDT(),
                     bn.getEmail(),
-                    bn.getDiaChi(),
-                    bn.getTinhTrangBenh(),
-                    bn.getTrangThai()?"Đã khám":"Chưa khám",
-                    bn.getLoaiBN()?"Nội trú":"Ngoại trú"
-                    //nv.getVaiTro()?"Trưởng phòng":"Nhân viên"
+                    bn.getCmnd(),
+                    bn.getDiaChi()
                 };
                 model.addRow(row);
             }
         } 
         catch (Exception e) {
-            this.alert(this, "Lỗi truy vấn dữ liệu!");
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu!");
         }
     }
 
-    private void alert(QuanLyBenhNhan aThis, String lỗi_truy_vấn_dữ_liệu) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
