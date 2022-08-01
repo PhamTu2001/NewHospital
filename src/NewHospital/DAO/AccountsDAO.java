@@ -49,7 +49,7 @@ public class AccountsDAO {
         }
         // Add vào CSDL
         public void insert(Accounts entity){
-            String sql = "Insert into ListAccount(TaiKhoan, MatKhau, HoTen, SoDT, Role) values (?,?,?,?,?)";
+            String sql = "Insert into Accounts(TaiKhoan, MatKhau, HoTen, SoDT, Role) values (?,?,?,?,?)";
             JDBC.executeUpdate(sql,
                     entity.getUserName(),
                     entity.getPassWord(),
@@ -60,7 +60,7 @@ public class AccountsDAO {
         }
         // Capnhat vào CSDL
         public void update(Accounts entity){
-            String sql = "Update ListAccount SET  MatKhau = ?, HoTen=?,SoDT = ?, VaiTro = ? WHERE TaiKhoan = ?";
+            String sql = "Update Accounts SET  MatKhau = ?, HoTen=?,SoDT = ?, VaiTro = ? WHERE TaiKhoan = ?";
             JDBC.executeUpdate(sql,
                     entity.getPassWord(),
                     entity.getHoTen(),
@@ -71,17 +71,17 @@ public class AccountsDAO {
         }
         // Xóa bảng ghi ra khỏi CSDL
         public void delete(String tk){
-            String sql="DELETE FROM ListAccount WHERE TaiKhoan=?";
+            String sql="DELETE FROM Accounts WHERE TaiKhoan=?";
             JDBC.executeUpdate(sql, tk);
         }
         // Truy vấn show database bảng NhânViên
         public List<Accounts> selects() {
-        String sql="SELECT * FROM ListAccount";
+        String sql="SELECT * FROM Accounts";
         return selects(sql);      //trong 1 class có thể có 2 method trùng tên (nhưng param khác nhau)
         }
         // Tìm nhânViên theo TaiKhoan (TaiKhoan)
         public Accounts FindIdNV(String id){
-            String sql = "SELECT * FROM ListAccount WHERE TaiKhoan = ?";
+            String sql = "SELECT * FROM Accounts WHERE TaiKhoan = ?";
             List<Accounts> list=selects(sql, id);
             return list.size()>0?list.get(0):null;   //có thể trả về là null
         }

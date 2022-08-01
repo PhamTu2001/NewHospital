@@ -31,9 +31,6 @@ public class KhoDuoc {
 
     public KhoDuoc() {
     }
-
-    
-    
     
     public String getMaThuoc() {
         return maThuoc;

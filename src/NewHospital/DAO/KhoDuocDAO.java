@@ -40,6 +40,7 @@ public class KhoDuocDAO {
         } 
         catch (SQLException ex) {
             throw new RuntimeException(ex);
+            
         }
         return list;
     }
@@ -47,5 +48,11 @@ public class KhoDuocDAO {
     public List<KhoDuoc> selectAll(){
         String sql="SELECT * FROM KhoDuoc";
         return selectBySql(sql);
+    }
+    
+    public KhoDuoc selectById(String maThuoc){
+        String sql="SELECT * FROM KhoDuoc WHERE MaThuoc=?";
+        List<KhoDuoc> list = selectBySql(sql, maThuoc);
+        return list.size() > 0 ? list.get(0) : null;
     }
 }

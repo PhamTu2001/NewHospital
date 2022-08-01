@@ -41,8 +41,8 @@ public class DangNhap extends javax.swing.JFrame {
             }
         }
         catch (Exception e) {
-            dialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
-            //System.out.println(e);
+            //dialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+            System.out.println(e);
         }
  }
     @SuppressWarnings("unchecked")
