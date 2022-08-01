@@ -11,32 +11,32 @@ import java.util.Date;
  * @author yukth
  */
 public class TT_NhanVien {
+
     private String maNV;
     private String hoTen;
     private boolean gioiTinh;
     private Date ngaySinh;
-    private String SDT;
+    private String SoDT;
     private String email;
-    private String diaChi ;
+    private String diaChi;
     private String hinh;
     private boolean chucVu;
 
-    public TT_NhanVien(String maNV, String hoTen, boolean gioiTinh, Date ngaySinh, String SDT, String email, String diaChi, String hinh, boolean chucVu) {
+    public TT_NhanVien() {
+    }
+
+    public TT_NhanVien(String maNV, String hoTen, boolean gioiTinh, Date ngaySinh, String SoDT, String email, String diaChi, String hinh, boolean chucVu) {
         this.maNV = maNV;
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
-        this.SDT = SDT;
+        this.SoDT = SoDT;
         this.email = email;
         this.diaChi = diaChi;
         this.hinh = hinh;
         this.chucVu = chucVu;
     }
 
-    public TT_NhanVien() {
-    }
-
-    
     public String getMaNV() {
         return maNV;
     }
@@ -69,12 +69,12 @@ public class TT_NhanVien {
         this.ngaySinh = ngaySinh;
     }
 
-    public String getSDT() {
-        return SDT;
+    public String getSoDT() {
+        return SoDT;
     }
 
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
+    public void setSoDT(String SoDT) {
+        this.SoDT = SoDT;
     }
 
     public String getEmail() {
@@ -108,8 +108,5 @@ public class TT_NhanVien {
     public void setChucVu(boolean chucVu) {
         this.chucVu = chucVu;
     }
-    
-    
-    
-    
+
 }

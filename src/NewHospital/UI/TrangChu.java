@@ -389,13 +389,12 @@ public class TrangChu extends javax.swing.JFrame {
 
     private void btnThongTinNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongTinNhanVienActionPerformed
         // TODO add your handling code here:
-        if(UserHelper.authenticated()){
+//        if(UserHelper.authenticated()){
             QuanLyNhanVien nhanVien = new QuanLyNhanVien();
             openX(nhanVien);
-        }else {
-            dialogHelper.alert(this, "Vui lòng đăng nhập!");
-        }
-       
+//        }else {
+//            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+//        }
     }//GEN-LAST:event_btnThongTinNhanVienActionPerformed
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
