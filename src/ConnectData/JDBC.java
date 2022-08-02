@@ -19,11 +19,9 @@ import java.util.logging.Logger;
  */
 public class JDBC {
     public static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"; 
-    private static String dburl="jdbc:sqlserver://localhost:1433;"
-            + "databaseName=DataBenhVien;integratedSecurity=true;"
-            + "encrypt=true;trustServerCertificate=true";
+    private static String dburl="jdbc:sqlserver://localhost:8801;databaseName=DataBenhVien;";
     public static String username="sa";
-    public static String password="thanhthai2404";
+    public static String password="Ngoctu263";
     //nạp driver
     static{
         try {
