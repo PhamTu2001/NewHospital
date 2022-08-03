@@ -5,9 +5,18 @@
 package NewHospital.UI;
 
 import NewHospital.DAO.NhanVienDAO;
+import NewHospital.Helper.UserHelper;
 import NewHospital.Helper.XDate;
+import NewHospital.Helper.XImage;
+import NewHospital.Helper.dateHelper;
+import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.TT_NhanVien;
+import java.awt.HeadlessException;
+import java.io.File;
+import java.util.Date;
 import java.util.List;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -149,10 +158,25 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
         });
 
         btnPrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/lui.png"))); // NOI18N
+        btnPrevious.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPreviousActionPerformed(evt);
+            }
+        });
 
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/tien.png"))); // NOI18N
+        btnNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextActionPerformed(evt);
+            }
+        });
 
         btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/cuoi.png"))); // NOI18N
+        btnLast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLastActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -319,7 +343,7 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rdoNu))
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,6 +396,11 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
         btnLamMoi.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/refresh.png"))); // NOI18N
         btnLamMoi.setText("Làm mới");
+        btnLamMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLamMoiActionPerformed(evt);
+            }
+        });
 
         btnThem.setBackground(new java.awt.Color(102, 204, 255));
         btnThem.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
@@ -432,6 +461,11 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
 
         lblHinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHinh.setText("Ảnh 3x4");
+        lblHinh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHinhMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -469,7 +503,7 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
         );
         PanelThongTinLayout.setVerticalGroup(
             PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+            .addComponent(tabs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 568, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -490,6 +524,7 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
 
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
         // TODO add your handling code here:
+        first();
     }//GEN-LAST:event_btnFirstActionPerformed
 
     private void txtMaNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaNVActionPerformed
@@ -498,14 +533,17 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
+        insert();   
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
+        delete();
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
+        update();
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void tblNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseClicked
@@ -515,6 +553,31 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
             this.edit();
         }
     }//GEN-LAST:event_tblNhanVienMouseClicked
+
+    private void btnPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreviousActionPerformed
+        // TODO add your handling code here:
+        prev();
+    }//GEN-LAST:event_btnPreviousActionPerformed
+
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+        // TODO add your handling code here:
+        next(); 
+    }//GEN-LAST:event_btnNextActionPerformed
+
+    private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastActionPerformed
+        // TODO add your handling code here:
+        last();
+    }//GEN-LAST:event_btnLastActionPerformed
+
+    private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
+        // TODO add your handling code here:
+        clearForm();
+    }//GEN-LAST:event_btnLamMoiActionPerformed
+
+    private void lblHinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHinhMouseClicked
+        // TODO add your handling code here:
+        choosePicture();
+    }//GEN-LAST:event_lblHinhMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -563,6 +626,7 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
 
     int row = -1;
     NhanVienDAO NVdao = new NhanVienDAO();
+    JFileChooser fileChooser = new JFileChooser();
 
     public void init() {
         fillTable();
@@ -592,6 +656,41 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
         }
     }
 
+        void choosePicture() {
+        if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            fileChooser.setDialogTitle("Choose Image");
+            File file = fileChooser.getSelectedFile();
+            XImage.save(file);
+            ImageIcon icon = XImage.read(file.getName());
+            lblHinh.setToolTipText(file.getName());
+            lblHinh.setIcon(icon);
+        }
+    }
+    
+    void first() {
+        this.row = 0;
+        this.edit();
+    }
+
+    void prev() {
+        if (this.row > 0) {
+            this.row--;
+            this.edit();
+        }
+    }
+
+    void next() {
+        if (this.row < tblNhanVien.getRowCount() - 1) {
+            this.row++;
+            this.edit();
+        }
+    }
+
+    void last() {
+        this.row = tblNhanVien.getRowCount() - 1;
+        this.edit();
+    }
+    
     //đổ dữ liệu lên form
     void edit() {
         String maNV = (String) tblNhanVien.getValueAt(this.row, 0);
@@ -601,6 +700,31 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
         tabs.setSelectedIndex(1);
     }
 
+        void clearForm() {
+        TT_NhanVien nh = new TT_NhanVien();
+        lblHinh.setIcon(null);
+//        nh.setMaNV(UserHelper.USER.getUserName());
+        this.setForm(nh);
+        this.row = -1;
+        this.updateStatus();
+    }
+    
+    void updateStatus() {
+        boolean edit = (this.row >= 0);
+        boolean first = (this.row == 0);
+        boolean last = (this.row == tblNhanVien.getRowCount() - 1);
+        //Form state
+        txtMaNV.setEditable(edit);
+        btnThem.setEnabled(!edit);
+        btnXoa.setEnabled(!edit);
+        btnSua.setEnabled(!edit);
+        //Directional state
+        btnFirst.setEnabled(edit && !first);
+        btnPrevious.setEnabled(edit && !first);
+        btnNext.setEnabled(edit && !last);
+        btnLast.setEnabled(edit && !last);
+    }
+        
     void setForm(TT_NhanVien nv) {
         txtHoVaTen.setText(nv.getHoTen());
         txtNgaySinh.setText(XDate.toString(nv.getNgaySinh(), "dd/MM/yyyy"));
@@ -613,14 +737,69 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
         }
         txtEmail.setText(nv.getEmail());
         txtDiaChi.setText(nv.getDiaChi());
+        if (nv.getHinh() != null) {
+            lblHinh.setToolTipText(nv.getHinh());
+            lblHinh.setIcon(XImage.read(nv.getHinh()));
+        }
         if (nv.isChucVu()) {
             rdoBacSi.setSelected(true);
         } else {
             rdoDieuDuong.setSelected(true);
         }
-        if(nv.getHinh() != null){
-            lblHinh.setToolTipText(nv.getHinh());
-            //lblHinh.setIcon(XImage.read(nv.getHinh()));
+    }
+        
+        TT_NhanVien getModel() {
+        TT_NhanVien model = new TT_NhanVien();
+        model.setMaNV(txtMaNV.getText());
+        model.setHoTen(txtHoVaTen.getText());
+        model.setGioiTinh(rdoNam.isSelected());
+        model.setNgaySinh(dateHelper.toDate(txtNgaySinh.getText()));
+        model.setSoDT(txtSDT.getText());
+        model.setEmail(txtEmail.getText());
+        model.setDiaChi(txtDiaChi.getText());
+        model.setHinh(lblHinh.getText());
+        model.setChucVu(rdoBacSi.isSelected());     //ngày đăng kí luôn là ngày hôm nay dù có sửa trên form
+        return model;
+    }
+    
+        void insert() {
+        TT_NhanVien nh = getModel();
+        try {
+            NVdao.insert(nh);
+            this.fillTable();
+            this.clearForm();
+            dialogHelper.alert(this, "Insert successfully");
+        } catch (Exception e) {
+            dialogHelper.alert(this, "Insert unsucessfully!");
         }
     }
+        
+    void update() {
+        TT_NhanVien nh = getModel();
+        try {
+            NVdao.update(nh);
+            this.fillTable();
+            dialogHelper.alert(this, "Update successfully");
+        } catch (Exception e) {
+            dialogHelper.alert(this, "Update unsucessfully!");
+        }
+    }
+
+    void delete() {
+//        if (!UserHelper.isManager()) {
+//            dialogHelper.alert(this, "You're not authorized to delete learner!");
+//        } else {
+            String manh = txtMaNV.getText();
+            if (dialogHelper.confirm(this, "Do you want to delete this?")) {
+                try {
+                    NVdao.delete(manh);
+                    this.fillTable();
+                    this.clearForm();
+                    dialogHelper.alert(this, "Delete sucessfully!");
+                } catch (Exception e) {
+                    dialogHelper.alert(this, "Delete unsucessfully!");
+                }
+            }
+        }
+//    }
 }

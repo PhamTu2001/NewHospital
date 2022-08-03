@@ -33,7 +33,7 @@ public class NhanVienDAO {
                     entity.setEmail(rs.getString("Email"));
                     entity.setDiaChi(rs.getString("DiaChi"));
                     entity.setChucVu(rs.getBoolean("ChucVu"));
-                    entity.setHinh(rs.getString("Hinh"));
+//                    entity.setHinh(rs.getString("Hinh"));
                     list.add(entity);
                 }
             } finally {
@@ -44,6 +44,47 @@ public class NhanVienDAO {
             throw new RuntimeException(ex);
         }
         return list;
+    }
+    
+        public void insert(TT_NhanVien entity) {
+        String sql="INSERT INTO NhanVien (MaNV, HoTen, GioiTinh, NgaySinh, SoDT, Email, DiaChi, Hinh, ChucVu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+         JDBC.executeUpdate(sql,
+             entity.getMaNV(),
+             entity.getHoTen(),
+             entity.isGioiTinh(),         
+             entity.getNgaySinh(),
+             entity.getSoDT(),
+             entity.getEmail(),
+             entity.getDiaChi(),
+             entity.getHinh(),
+//             entity.getHinh(),
+             entity.isChucVu());
+    }
+        
+        public void update(TT_NhanVien model) {
+        String sql="UPDATE NhanVien SET HoTen=?, GioiTinh=?, NgaySinh=?, SoDT=?, Email=?, DiaChi=?, Hinh=?, ChucVu=? WHERE MaNV=?";
+        JDBC.executeUpdate(sql,            
+                 model.getHoTen(),
+                 model.isGioiTinh(),
+                 model.getNgaySinh(),
+                 model.getSoDT(),
+                 model.getEmail(),
+                 model.getDiaChi(),
+                 model.getHinh(),
+                 model.isChucVu(),
+                 model.getMaNV());
+    }
+            
+        public void delete(String id) {
+        String sql="DELETE FROM NhanVien WHERE MaNV=?";
+        JDBC.executeUpdate(sql, id);
+    }
+    
+    
+    
+    public List<TT_NhanVien> selectByKeyword(String keyword) {
+        String sql="SELECT * FROM NhanVien WHERE HoTen LIKE ?";
+        return selectBySql(sql, "%"+keyword+"%");
     }
 
     public List<TT_NhanVien> selectAll() {
