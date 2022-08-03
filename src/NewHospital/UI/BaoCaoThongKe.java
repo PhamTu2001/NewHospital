@@ -40,11 +40,6 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
         tblBaoCaoThongKe = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         cboPhongBan = new javax.swing.JComboBox<>();
-        jPanel4 = new javax.swing.JPanel();
-        btnCong1 = new javax.swing.JButton();
-        btnCuoi = new javax.swing.JButton();
-        btnDau = new javax.swing.JButton();
-        btnTru1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -112,64 +107,6 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCong1.setBackground(new java.awt.Color(51, 204, 255));
-        btnCong1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCong1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/tien.png"))); // NOI18N
-        btnCong1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCong1ActionPerformed(evt);
-            }
-        });
-
-        btnCuoi.setBackground(new java.awt.Color(51, 204, 255));
-        btnCuoi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCuoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/dau.png"))); // NOI18N
-        btnCuoi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCuoiActionPerformed(evt);
-            }
-        });
-
-        btnDau.setBackground(new java.awt.Color(51, 204, 255));
-        btnDau.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnDau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/cuoi.png"))); // NOI18N
-        btnDau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDauActionPerformed(evt);
-            }
-        });
-
-        btnTru1.setBackground(new java.awt.Color(51, 204, 255));
-        btnTru1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnTru1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/lui.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCuoi, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnTru1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCong1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDau, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCong1, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(btnCuoi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnTru1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout PanelThongTinLayout = new javax.swing.GroupLayout(PanelThongTin);
         PanelThongTin.setLayout(PanelThongTinLayout);
         PanelThongTinLayout.setHorizontalGroup(
@@ -179,8 +116,7 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
                 .addGroup(PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
-                    .addComponent(cboPhongBan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cboPhongBan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PanelThongTinLayout.setVerticalGroup(
@@ -192,9 +128,7 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
                 .addComponent(cboPhongBan, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -215,18 +149,6 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCong1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCong1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCong1ActionPerformed
-
-    private void btnCuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuoiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCuoiActionPerformed
-
-    private void btnDauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDauActionPerformed
-
     private void cboPhongBanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboPhongBanActionPerformed
         // TODO add your handling code here:
         //fillTablePhongBan();
@@ -235,13 +157,8 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelThongTin;
-    private javax.swing.JButton btnCong1;
-    private javax.swing.JButton btnCuoi;
-    private javax.swing.JButton btnDau;
-    private javax.swing.JButton btnTru1;
     private javax.swing.JComboBox<String> cboPhongBan;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblBaoCaoThongKe;
     // End of variables declaration//GEN-END:variables
