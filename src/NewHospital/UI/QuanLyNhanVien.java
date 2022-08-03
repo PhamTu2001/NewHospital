@@ -714,7 +714,7 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
         boolean first = (this.row == 0);
         boolean last = (this.row == tblNhanVien.getRowCount() - 1);
         //Form state
-        txtMaNV.setEditable(edit);
+        txtMaNV.setEditable(!edit);
         btnThem.setEnabled(!edit);
         btnXoa.setEnabled(!edit);
         btnSua.setEnabled(!edit);
