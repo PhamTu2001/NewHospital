@@ -4,6 +4,20 @@
  */
 package NewHospital.UI;
 
+import NewHospital.DAO.ThuChiDAO;
+import NewHospital.Helper.XDate;
+import NewHospital.Helper.XImage;
+import NewHospital.Helper.dateHelper;
+import NewHospital.Helper.dialogHelper;
+import NewHospital.Model.ThuChi;
+import NewHospital.Model.ThuChi;
+import NewHospital.Model.ThuChi;
+import NewHospital.Model.ThuChi;
+import java.util.List;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author MSI GAMING
@@ -15,8 +29,111 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
      */
     public QuanLyThuChi() {
         initComponents();
+        init();
+    }
+    
+    int row = -1;
+    ThuChiDAO TCdao = new ThuChiDAO();
+
+    public void init() {
+        fillTable();
     }
 
+    void fillTable() {
+        DefaultTableModel model = (DefaultTableModel) tblQuanLyThuChi.getModel();
+        model.setRowCount(0);
+        try {
+            List<ThuChi> list = TCdao.selectAll();
+            for (ThuChi tc : list) {
+                Object[] row = {
+                 tc.getMaGD(),
+                 tc.getNoiDung(),
+                 tc.getNgayThucHien(),
+                 tc.getSoTien(),
+                 tc.isLoai() ? "Thu" : "Chi",
+                 tc.getMaNV()  
+                };
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
+    
+    void edit() {
+        String maGD = (String) tblQuanLyThuChi.getValueAt(this.row, 0);
+        ThuChi nv = TCdao.selectById(maGD);
+        this.setForm(nv);
+        //this.updateStatus();
+        jTabbedPane4.setSelectedIndex(1);
+    }
+    
+    void setForm(ThuChi tc) {
+        txtMaGiaoDich.setText(tc.getMaGD());
+        txtNgayThucHien.setText(XDate.toString(tc.getNgayThucHien()));
+        txtMaNV.setText(tc.getMaNV());
+        txtNoiDungGiaoDich.setText(tc.getNoiDung());
+        txtSoTienGiaoDich.setText(String.valueOf(tc.getSoTien()));
+        if (tc.isLoai()) {
+            rdoThu.setSelected(true);
+        } else {
+            rdoChi.setSelected(true);
+        }
+    }
+
+        ThuChi getModel() {
+        ThuChi model = new ThuChi();
+        model.setMaGD(txtMaGiaoDich.getText());
+        model.setNoiDung(txtNoiDungGiaoDich.getText());
+        model.setNgayThucHien(dateHelper.toDate(txtNgayThucHien.getText()));
+        model.setSoTien(Float.valueOf(txtSoTienGiaoDich.getText()));
+        model.setLoai(rdoThu.isSelected());
+        return model;
+    }
+    
+    void insert() {
+        ThuChi nh = getModel();
+//        try {
+            TCdao.insert(nh);
+            this.fillTable();
+            this.clearForm();
+            dialogHelper.alert(this, "Insert successfully");
+//        } catch (Exception e) {
+//            dialogHelper.alert(this, "Insert unsucessfully!");
+//        }
+    }
+    
+    void delete() {
+            String manh = txtMaNV.getText();
+            if (dialogHelper.confirm(this, "Do you want to delete this?")) {
+                try {
+                    TCdao.delete(manh);
+                    this.fillTable();
+                    this.clearForm();
+                    dialogHelper.alert(this, "Delete sucessfully!");
+                } catch (Exception e) {
+                    dialogHelper.alert(this, "Delete unsucessfully!");
+                }
+            }
+        }
+    
+    void clearForm() {
+        ThuChi nh = new ThuChi();
+        this.setForm(nh);
+        this.row = -1;
+        this.updateStatus();
+    }
+    
+    void updateStatus() {
+        boolean edit = (this.row >= 0);
+        boolean first = (this.row == 0);
+        boolean last = (this.row == tblQuanLyThuChi.getRowCount() - 1);
+        //Form state
+        txtMaNV.setEditable(!edit);
+        btnThem.setEnabled(!edit);
+        btnXoa.setEnabled(!edit);
+        btnSua.setEnabled(!edit);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,7 +174,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtNgayThucHien1 = new javax.swing.JTextField();
+        txtMaNV = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -105,7 +222,20 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
             new String [] {
                 "Mã GD", "Nội Dung", "Ngày Thực hiện", "Người thực hiện", "Số tiền", "Loại"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblQuanLyThuChi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblQuanLyThuChiMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblQuanLyThuChi);
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
@@ -184,6 +314,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         jTabbedPane4.addTab("Danh sách", jPanel3);
 
         txtMaGiaoDich.setForeground(new java.awt.Color(204, 204, 204));
+        txtMaGiaoDich.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtMaGiaoDich.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMaGiaoDichActionPerformed(evt);
@@ -191,13 +322,16 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         });
 
         txtSoTienGiaoDich.setForeground(new java.awt.Color(204, 204, 204));
+        txtSoTienGiaoDich.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         txtNoiDungGiaoDich.setColumns(20);
         txtNoiDungGiaoDich.setForeground(new java.awt.Color(204, 204, 204));
         txtNoiDungGiaoDich.setRows(5);
+        txtNoiDungGiaoDich.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jScrollPane4.setViewportView(txtNoiDungGiaoDich);
 
         txtNgayThucHien.setForeground(new java.awt.Color(204, 204, 204));
+        txtNgayThucHien.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtNgayThucHien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNgayThucHienActionPerformed(evt);
@@ -224,6 +358,11 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         btnThem.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/plus.png"))); // NOI18N
         btnThem.setText("Thêm");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
         btnXoa.setBackground(new java.awt.Color(255, 204, 204));
         btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -316,10 +455,11 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/User.png"))); // NOI18N
         jLabel8.setText("Người thực hiện:");
 
-        txtNgayThucHien1.setForeground(new java.awt.Color(204, 204, 204));
-        txtNgayThucHien1.addActionListener(new java.awt.event.ActionListener() {
+        txtMaNV.setForeground(new java.awt.Color(204, 204, 204));
+        txtMaNV.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtMaNV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNgayThucHien1ActionPerformed(evt);
+                txtMaNVActionPerformed(evt);
             }
         });
 
@@ -353,7 +493,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
                             .addComponent(jLabel8))
                         .addGap(15, 15, 15)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNgayThucHien1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtSoTienGiaoDich, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
@@ -377,7 +517,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNgayThucHien1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -484,9 +624,22 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInActionPerformed
 
-    private void txtNgayThucHien1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayThucHien1ActionPerformed
+    private void txtMaNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaNVActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgayThucHien1ActionPerformed
+    }//GEN-LAST:event_txtMaNVActionPerformed
+
+    private void tblQuanLyThuChiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblQuanLyThuChiMouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 2) {
+            this.row = tblQuanLyThuChi.getSelectedRow();
+            this.edit();
+        }
+    }//GEN-LAST:event_tblQuanLyThuChiMouseClicked
+
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        // TODO add your handling code here:
+        insert();
+    }//GEN-LAST:event_btnThemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -519,8 +672,8 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton rdoThu;
     private javax.swing.JTable tblQuanLyThuChi;
     private javax.swing.JTextField txtMaGiaoDich;
+    private javax.swing.JTextField txtMaNV;
     private javax.swing.JTextField txtNgayThucHien;
-    private javax.swing.JTextField txtNgayThucHien1;
     private javax.swing.JTextArea txtNoiDungGiaoDich;
     private javax.swing.JTextField txtSoTienGiaoDich;
     // End of variables declaration//GEN-END:variables
