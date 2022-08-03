@@ -4,6 +4,14 @@
  */
 package NewHospital.UI;
 
+import NewHospital.DAO.BaoCaoDAO;
+import NewHospital.Model.BaoCao;
+import NewHospital.Model.TT_NhanVien;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author MSI GAMING
@@ -15,6 +23,7 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
      */
     public BaoCaoThongKe() {
         initComponents();
+        init();
     }
 
     /**
@@ -30,7 +39,7 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBaoCaoThongKe = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cboPhongBan = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         btnCong1 = new javax.swing.JButton();
         btnCuoi = new javax.swing.JButton();
@@ -77,9 +86,17 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Mã BC", "Nội dung", "Người lưu", "Nơi lưu", "Giời gian lưu"
+                "Mã BC", "Nội dung", "Nơi lưu", "Giời gian lưu", "Người lưu"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tblBaoCaoThongKe);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -88,7 +105,12 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
         jLabel1.setText("BÁO CÁO THỐNG KÊ");
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bộ lọc thông tin cần tìm", "Báo Cáo Doanh Thu ", "Báo Cáo Nhân Viên Làm Việc", "Báo Cáo Danh Sách Trang Thiết Bị", "Báo Cáo Thuốc" }));
+        cboPhongBan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tất cả", "Báo Cáo Doanh Thu ", "Báo Cáo Nhân Viên Làm Việc", "Báo Cáo Danh Sách Trang Thiết Bị", "Báo Cáo Thuốc" }));
+        cboPhongBan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboPhongBanActionPerformed(evt);
+            }
+        });
 
         btnCong1.setBackground(new java.awt.Color(51, 204, 255));
         btnCong1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -157,7 +179,7 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
                 .addGroup(PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cboPhongBan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -167,7 +189,7 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cboPhongBan, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -205,6 +227,11 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDauActionPerformed
 
+    private void cboPhongBanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboPhongBanActionPerformed
+        // TODO add your handling code here:
+        //fillTablePhongBan();
+    }//GEN-LAST:event_cboPhongBanActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelThongTin;
@@ -212,10 +239,57 @@ public class BaoCaoThongKe extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCuoi;
     private javax.swing.JButton btnDau;
     private javax.swing.JButton btnTru1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cboPhongBan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblBaoCaoThongKe;
     // End of variables declaration//GEN-END:variables
+
+    int row = -1;
+    BaoCaoDAO BCdao = new BaoCaoDAO();
+
+    public void init() {
+        fillTable();
+        fillComboBoxBaoCao();
+    }
+
+    void fillTable() {
+        DefaultTableModel model = (DefaultTableModel) tblBaoCaoThongKe.getModel();
+        model.setRowCount(0);
+        try {
+            List<BaoCao> list = BCdao.selectAll();
+            for (BaoCao bc : list) {
+                Object[] row = {
+                    bc.getMaBC(),
+                    bc.getNoiDung(),
+                    bc.getNoiLuu(),
+                    bc.getThoiGianLuu(),
+                    bc.getMaNV()
+                };
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
+
+    void fillComboBoxBaoCao() {
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cboPhongBan.getModel();
+        model.removeAllElements();
+        List<String> list = BCdao.selectPhongBan();
+        for (String pb : list) {
+            model.addElement(pb);
+        }
+    }
+
+    void fillTablePhongBan() {
+        DefaultTableModel model = (DefaultTableModel) tblBaoCaoThongKe.getModel();
+        model.setRowCount(0);
+        String phongBan = (String)cboPhongBan.getSelectedItem();
+        List<Object[]> list = BCdao.getPhongBan(phongBan);
+        for(Object[] row : list){
+            model.addRow(row);
+        }
+    }
 }

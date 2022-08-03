@@ -371,17 +371,17 @@ public class TrangChu extends javax.swing.JFrame {
 
     private void btnBaoCaoThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaoCaoThongKeActionPerformed
         // TODO add your handling code here:
-        if(UserHelper.authenticated()){
-            if(UserHelper.USER.isVaiTro() == false){
+//        if(UserHelper.authenticated()){
+//            if(UserHelper.USER.isVaiTro() == false){
                 BaoCaoThongKe baoCao = new BaoCaoThongKe();
                 openX(baoCao);
-            }
-            else{
-                dialogHelper.alert(this, "Chỉ Quản Lý mới xem được báo cáo - thống kê !");
-            }
-        }else {
-            dialogHelper.alert(this, "Vui lòng đăng nhập!");
-        }
+//            }
+//            else{
+//                dialogHelper.alert(this, "Chỉ Quản Lý mới xem được báo cáo - thống kê !");
+//            }
+//        }else {
+//            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+//        }
 //        BaoCaoThongKe baoCao = new BaoCaoThongKe();
 //        jDesktopPane1.add(baoCao);
 //        baoCao.show();

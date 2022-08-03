@@ -13,26 +13,23 @@ import java.util.Date;
 public class BaoCao {
     private String maBC;
     private String noiDung;
-    private String nguoiLuu;
     private String noiLuu;
     private Date thoiGianLuu;
     private String maNV;
-
-    public BaoCao(String maBC, String noiDung, String nguoiLuu, String noiLuu, Date thoiGianLuu, String maNV) {
-        this.maBC = maBC;
-        this.noiDung = noiDung;
-        this.nguoiLuu = nguoiLuu;
-        this.noiLuu = noiLuu;
-        this.thoiGianLuu = thoiGianLuu;
-        this.maNV = maNV;
-    }
+    private String hoTen;
 
     public BaoCao() {
     }
 
-    
-    
-    
+    public BaoCao(String maBC, String noiDung, String noiLuu, Date thoiGianLuu, String maNV, String hoTen) {
+        this.maBC = maBC;
+        this.noiDung = noiDung;
+        this.noiLuu = noiLuu;
+        this.thoiGianLuu = thoiGianLuu;
+        this.maNV = maNV;
+        this.hoTen = hoTen;
+    }
+
     public String getMaBC() {
         return maBC;
     }
@@ -47,14 +44,6 @@ public class BaoCao {
 
     public void setNoiDung(String noiDung) {
         this.noiDung = noiDung;
-    }
-
-    public String getNguoiLuu() {
-        return nguoiLuu;
-    }
-
-    public void setNguoiLuu(String nguoiLuu) {
-        this.nguoiLuu = nguoiLuu;
     }
 
     public String getNoiLuu() {
@@ -80,8 +69,12 @@ public class BaoCao {
     public void setMaNV(String maNV) {
         this.maNV = maNV;
     }
-    
-    
-    
-    
+
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
+    }
 }
