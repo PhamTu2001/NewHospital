@@ -105,6 +105,7 @@ public class DangNhap extends javax.swing.JFrame {
         btnDangKy.setBackground(new java.awt.Color(204, 255, 255));
         btnDangKy.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnDangKy.setForeground(new java.awt.Color(255, 51, 51));
+        btnDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Log out.png"))); // NOI18N
         btnDangKy.setText("Đăng ký");
         btnDangKy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
