@@ -617,8 +617,8 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
                     bn.getNgaySinh(),
                     bn.getSoDT(),
                     bn.getEmail(),
-                    bn.getCmnd(),
-                    bn.getDiaChi()
+                    bn.getDiaChi(),
+                    bn.getCmnd()
                 };
                 model.addRow(row);
             }

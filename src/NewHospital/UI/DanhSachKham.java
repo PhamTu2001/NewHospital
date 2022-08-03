@@ -4,6 +4,12 @@
  */
 package NewHospital.UI;
 
+import NewHospital.DAO.DanhSachKhamDAO;
+import NewHospital.Model.DS_ChoKham;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author MSI GAMING
@@ -15,6 +21,7 @@ public class DanhSachKham extends javax.swing.JInternalFrame {
      */
     public DanhSachKham() {
         initComponents();
+        init();
     }
 
     /**
@@ -90,9 +97,17 @@ public class DanhSachKham extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "STT", "Họ tên", "CMND/CCCD", "Mã BN", "Số điện thoại", "Loại khám", "Lịch khám", "Triệu Chứng", "Hình thức"
+                "STT", "Họ tên", "CMND/CCCD", "Số điện thoại", "Loại khám", "Lịch khám", "Triệu Chứng", "Hình thức", "Mã BN"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tblKhamBenh);
 
         btnCuoi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -265,6 +280,7 @@ public class DanhSachKham extends javax.swing.JInternalFrame {
 
         txtSDT.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
+        cboLoaiKham.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         cboLoaiKham.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Khám tổng quát", "Khám cột sống", "Khám tay, chân" }));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -569,4 +585,38 @@ public class DanhSachKham extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtTimKiem;
     private javax.swing.JTextArea txtTrieuChung;
     // End of variables declaration//GEN-END:variables
+
+    int row = -1;
+    DanhSachKhamDAO DSKhamdao = new DanhSachKhamDAO();
+    
+    public void init(){
+        this.fillTable();
+        
+    }
+
+    private void fillTable() {
+        DefaultTableModel model = (DefaultTableModel) tblKhamBenh.getModel();
+        model.setRowCount(0);
+        try {
+            List<DS_ChoKham> list = DSKhamdao.selectAll();
+            for (DS_ChoKham dsk : list) {
+                Object[] row = {
+                    dsk.getSTT(),
+                    dsk.getHoTen(),
+                    dsk.getCmnd(),
+                    dsk.getSoDT(),
+                    dsk.getLoaiKhamBenh(),
+                    dsk.getLichKham(),
+                    dsk.getTrieuChung(),
+                    dsk.isHinhThuc() ? "Đặt lịch trước" : "Khám trực tiếp",
+                    dsk.getMaBN()
+                };
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
+    
+    
 }

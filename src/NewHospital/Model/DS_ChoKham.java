@@ -11,49 +11,102 @@ import java.util.Date;
  * @author yukth
  */
 public class DS_ChoKham {
-    private String MBN;
-    private String loaiXN;
-    private Date ngayKham;
-    private String  moTa;
 
-    public DS_ChoKham(String MBN, String loaiXN, Date ngayKham, String moTa) {
-        this.MBN = MBN;
-        this.loaiXN = loaiXN;
-        this.ngayKham = ngayKham;
-        this.moTa = moTa;
+    private int STT;
+    private String hoTen;
+    private String cmnd;
+    private String soDT;
+    private String loaiKhamBenh;
+    private Date lichKham;
+    private String trieuChung;
+    private boolean hinhThuc;
+    private String maBN;
+
+    public DS_ChoKham(int STT, String hoTen, String cmnd, String soDT, String loaiKhamBenh, Date lichKham, String trieuChung, boolean hinhThuc, String maBN) {
+        this.STT = STT;
+        this.hoTen = hoTen;
+        this.cmnd = cmnd;
+        this.soDT = soDT;
+        this.loaiKhamBenh = loaiKhamBenh;
+        this.lichKham = lichKham;
+        this.trieuChung = trieuChung;
+        this.hinhThuc = hinhThuc;
+        this.maBN = maBN;
     }
 
-    public String getMBN() {
-        return MBN;
+    public DS_ChoKham() {
     }
 
-    public void setMBN(String MBN) {
-        this.MBN = MBN;
+    public int getSTT() {
+        return STT;
     }
 
-    public String getLoaiXN() {
-        return loaiXN;
+    public void setSTT(int STT) {
+        this.STT = STT;
     }
 
-    public void setLoaiXN(String loaiXN) {
-        this.loaiXN = loaiXN;
+    public String getHoTen() {
+        return hoTen;
     }
 
-    public Date getNgaykham() {
-        return ngayKham;
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
     }
 
-    public void setNgaykham(Date ngayKham) {
-        this.ngayKham = ngayKham;
+    public String getCmnd() {
+        return cmnd;
     }
 
-    public String getMoTa() {
-        return moTa;
+    public void setCmnd(String cmnd) {
+        this.cmnd = cmnd;
     }
 
-    public void setMoTa(String moTa) {
-        this.moTa = moTa;
+    public String getSoDT() {
+        return soDT;
     }
-    
-    
+
+    public void setSoDT(String soDT) {
+        this.soDT = soDT;
+    }
+
+    public String getLoaiKhamBenh() {
+        return loaiKhamBenh;
+    }
+
+    public void setLoaiKhamBenh(String loaiKhamBenh) {
+        this.loaiKhamBenh = loaiKhamBenh;
+    }
+
+    public String getTrieuChung() {
+        return trieuChung;
+    }
+
+    public void setTrieuChung(String trieuChung) {
+        this.trieuChung = trieuChung;
+    }
+
+    public boolean isHinhThuc() {
+        return hinhThuc;
+    }
+
+    public void setHinhThuc(boolean hinhThuc) {
+        this.hinhThuc = hinhThuc;
+    }
+
+    public String getMaBN() {
+        return maBN;
+    }
+
+    public void setMaBN(String maBN) {
+        this.maBN = maBN;
+    }
+
+    public Date getLichKham() {
+        return lichKham;
+    }
+
+    public void setLichKham(Date lichKham) {
+        this.lichKham = lichKham;
+    }
+
 }
