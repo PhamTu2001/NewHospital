@@ -7,7 +7,7 @@ package NewHospital.UI;
 import NewHospital.DAO.ThuChiDAO;
 import NewHospital.Helper.XDate;
 import NewHospital.Helper.XImage;
-import NewHospital.Helper.dateHelper;
+//import NewHospital.Helper.dateHelper;
 import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.ThuChi;
 import NewHospital.Model.ThuChi;
@@ -85,7 +85,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         ThuChi model = new ThuChi();
         model.setMaGD(txtMaGiaoDich.getText());
         model.setNoiDung(txtNoiDungGiaoDich.getText());
-        model.setNgayThucHien(dateHelper.toDate(txtNgayThucHien.getText()));
+        model.setNgayThucHien(XDate.toDate(txtNgayThucHien.getText()));
         model.setSoTien(Float.valueOf(txtSoTienGiaoDich.getText()));
         model.setLoai(rdoThu.isSelected());
         return model;

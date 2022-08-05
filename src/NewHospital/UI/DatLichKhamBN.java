@@ -428,6 +428,7 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
         dskham.setLichKham(XDate.toDate(txtNgayKham.getText(), "dd/MM/yyyy"));
         dskham.setTrieuChung(txtTrieuChung.getText());
         dskham.setHinhThuc(rdoDatLichTruoc.isSelected());
+        dskham.setMaBN(txtMaBN.getText());
         return dskham;
     }
     

@@ -5,15 +5,12 @@
 package NewHospital.UI;
 
 import NewHospital.DAO.NhanVienDAO;
-import NewHospital.Helper.UserHelper;
 import NewHospital.Helper.XDate;
 import NewHospital.Helper.XImage;
-import NewHospital.Helper.dateHelper;
+//import NewHospital.Helper.dateHelper;
 import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.TT_NhanVien;
-import java.awt.HeadlessException;
 import java.io.File;
-import java.util.Date;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -753,7 +750,7 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
         model.setMaNV(txtMaNV.getText());
         model.setHoTen(txtHoVaTen.getText());
         model.setGioiTinh(rdoNam.isSelected());
-        model.setNgaySinh(dateHelper.toDate(txtNgaySinh.getText()));
+        model.setNgaySinh(XDate.toDate(txtNgaySinh.getText()));
         model.setSoDT(txtSDT.getText());
         model.setEmail(txtEmail.getText());
         model.setDiaChi(txtDiaChi.getText());

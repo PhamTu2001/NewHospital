@@ -52,9 +52,9 @@ public class DanhSachKhamDAO {
         return selectBySql(sql);
     }
 
-    public DS_ChoKham selectById(String maNV) {
-        String sql = "SELECT * FROM ListChoKham WHERE MaBN=?";
-        List<DS_ChoKham> list = selectBySql(sql, maNV);
+    public DS_ChoKham selectById(String cmnd) {
+        String sql = "SELECT * FROM ListChoKham WHERE Cmnd=?";
+        List<DS_ChoKham> list = selectBySql(sql, cmnd);
         return list.size() > 0 ? list.get(0) : null;
     }
 
@@ -71,5 +71,25 @@ public class DanhSachKhamDAO {
                 model.isHinhThuc(),
                 model.getMaBN()
         );
+    }
+    public void update(DS_ChoKham model){
+        String sql="UPDATE ListChoKham SET HoTen=?, CMND=?, SoDT=?, LoaiKhamBenh=?, LichKham=?, "
+                + "TrieuChung=?, HinhThuc=? where STT=?";
+        JDBC.executeUpdate(sql,
+                model.getHoTen(), 
+                model.getCmnd(), 
+                model.getSoDT(), 
+                model.getLoaiKhamBenh(), 
+                model.getLichKham(),
+                model.getTrieuChung(),
+                model.isHinhThuc(),
+                //model.getMaBN(),
+                model.getSTT()
+        );
+    }
+    
+    public void delete(Integer STT){
+        String sql="DELETE FROM ListChoKham WHERE STT=?";
+        JDBC.executeUpdate(sql, STT);
     }
 }
