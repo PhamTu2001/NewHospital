@@ -55,4 +55,32 @@ public class KhoDuocDAO {
         List<KhoDuoc> list = selectBySql(sql, maThuoc);
         return list.size() > 0 ? list.get(0) : null;
     }
+     public void insert(KhoDuoc model) {
+        String sql = "INSERT INTO KhoDuoc (MaThuoc, TenThuoc, HanSuDung, NgayNhap, NgayXuat, Soluong, GhiChu) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        JDBC.executeUpdate(sql,
+                model.getMaThuoc(),
+                model.getTenThuoc(),
+                model.getHanSuDung(),
+                model.getNgayNhap(),
+                model.getNgayXuat(),
+                model.getSoLuong(),
+                model.getGhiChu());
+    }
+
+    public void update(KhoDuoc model,String mathuoc) {
+        String sql = "UPDATE KhoDuoc SET TenThuoc=?, HanSuDung=?, NgayNhap=?, NgayXuat=?, Soluong=?, GhiChu=? where MaThuoc=?";
+        JDBC.executeUpdate(sql,
+                model.getTenThuoc(),
+                model.getHanSuDung(),
+                model.getNgayNhap(),
+                model.getNgayXuat(),
+                model.getSoLuong(),
+                model.getGhiChu(),
+                mathuoc);
+    }
+
+    public void delete(String MaThuoc) {
+        String sql = "DELETE FROM KhoDuoc WHERE MaThuoc=?";
+        JDBC.executeUpdate(sql, MaThuoc);
+    }
 }

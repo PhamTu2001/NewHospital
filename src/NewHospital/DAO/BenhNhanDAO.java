@@ -5,7 +5,6 @@
 package NewHospital.DAO;
 
 import ConnectData.JDBC;
-import NewHospital.Model.KhoDuoc;
 import NewHospital.Model.TT_BenhNhan;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -56,5 +55,35 @@ public class BenhNhanDAO {
         String sql="SELECT * FROM BenhNhan WHERE MaBN=?";
         List<TT_BenhNhan> list = selectBySql(sql, maBN);
         return list.size() > 0 ? list.get(0) : null;
+    }
+    public void insert(TT_BenhNhan model) {
+        String sql = "INSERT INTO BenhNhan (MaBN, HoTen, GioiTinh, NgaySinh, SoDT, Email, CMND, DiaChi) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        JDBC.executeUpdate(sql,
+                model.getMaBN(),
+                model.getHoTen(),
+                model.isGioiTinh(),
+                model.getNgaySinh(),
+                model.getSoDT(),
+                model.getEmail(),
+                model.getCmnd(),
+                model.getDiaChi());
+    }
+
+    public void update(TT_BenhNhan model,String maBN) {
+        String sql = "UPDATE BenhNhan SET HoTen=?, GioiTinh=?, NgaySinh=?, SoDT=?, Email=?, CMND=?, DiaChi=? where MaBN=?";
+        JDBC.executeUpdate(sql,
+                model.getHoTen(),
+                model.isGioiTinh(),
+                model.getNgaySinh(),
+                model.getSoDT(),
+                model.getEmail(),
+                model.getCmnd(),
+                model.getDiaChi(),
+                maBN);
+    }
+
+    public void delete(String maBN) {
+        String sql = "DELETE FROM BenhNhan WHERE MaBN=?";
+        JDBC.executeUpdate(sql, maBN);
     }
 }

@@ -4,8 +4,10 @@
  */
 package NewHospital.UI;
 
+import NewHospital.DAO.DatThuocDAO;
 import NewHospital.DAO.KhoDuocDAO;
 import NewHospital.Helper.XDate;
+import NewHospital.Model.DatThuoc;
 import NewHospital.Model.KhoDuoc;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -41,7 +43,7 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtMaThuoc = new javax.swing.JTextField();
+        txtTenThuoc1 = new javax.swing.JTextField();
         txtSoLuong = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtGhiChu = new javax.swing.JTextArea();
@@ -112,7 +114,6 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
         txtGhiChu.setRows(5);
         jScrollPane2.setViewportView(txtGhiChu);
 
-        btnDat.setBackground(new java.awt.Color(255, 255, 255));
         btnDat.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btnDat.setForeground(new java.awt.Color(0, 0, 204));
         btnDat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Add to basket.png"))); // NOI18N
@@ -133,7 +134,7 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
                     .addGroup(pnlDatThuocLayout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMaThuoc))
+                        .addComponent(txtTenThuoc1))
                     .addGroup(pnlDatThuocLayout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -155,7 +156,7 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
                 .addGroup(pnlDatThuocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlDatThuocLayout.createSequentialGroup()
-                        .addComponent(txtMaThuoc)
+                        .addComponent(txtTenThuoc1)
                         .addGap(8, 8, 8)))
                 .addGroup(pnlDatThuocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -245,7 +246,6 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
             }
         });
         tblKhoDuoc.setFocusable(false);
-        tblKhoDuoc.setRowHeight(25);
         tblKhoDuoc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblKhoDuocMouseClicked(evt);
@@ -323,7 +323,6 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
             }
         });
 
-        btnFirst.setBackground(new java.awt.Color(255, 255, 255));
         btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/dau.png"))); // NOI18N
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -331,7 +330,6 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
             }
         });
 
-        btnPrevious.setBackground(new java.awt.Color(255, 255, 255));
         btnPrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/lui.png"))); // NOI18N
         btnPrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,7 +337,6 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
             }
         });
 
-        btnNext.setBackground(new java.awt.Color(255, 255, 255));
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/tien.png"))); // NOI18N
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -347,7 +344,6 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
             }
         });
 
-        btnLast.setBackground(new java.awt.Color(255, 255, 255));
         btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/cuoi.png"))); // NOI18N
         btnLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -587,12 +583,10 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtTenThuocActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSuaActionPerformed
+sua();    }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnXoaActionPerformed
+xoa();    }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
         // TODO add your handling code here:
@@ -600,8 +594,7 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnLamMoiActionPerformed
 
     private void btnDatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDatActionPerformed
+dat();    }//GEN-LAST:event_btnDatActionPerformed
 
     private void tblKhoDuocMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhoDuocMouseClicked
         // TODO add your handling code here:
@@ -637,8 +630,7 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnThemActionPerformed
+them();    }//GEN-LAST:event_btnThemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -681,21 +673,24 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea txtGhiChu;
     private javax.swing.JTextArea txtGhiChu2;
     private javax.swing.JTextField txtHSD;
-    private javax.swing.JTextField txtMaThuoc;
     private javax.swing.JTextField txtMaThuoc2;
     private javax.swing.JTextField txtNgayNhap;
     private javax.swing.JTextField txtNgayXuat;
     private javax.swing.JTextField txtSoLuong;
     private javax.swing.JTextField txtSoLuong2;
     private javax.swing.JTextField txtTenThuoc;
+    private javax.swing.JTextField txtTenThuoc1;
     // End of variables declaration//GEN-END:variables
 
     int row = -1;
     KhoDuocDAO KDdao = new KhoDuocDAO();
+    DatThuocDAO DTdao = new DatThuocDAO();
 
     public void init() {
         this.fillTable();
         this.row = -1;
+                this.fillTable1();
+
         this.updateStatus();
     }
 
@@ -721,7 +716,7 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu!");
         }
     }
-    
+
     //đổ dữ liệu lên form
     void edit() {
         String maThuoc = (String) tblKhoDuoc.getValueAt(this.row, 0);
@@ -731,7 +726,7 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
         tabs.setSelectedIndex(1);
     }
 
-    void setForm(KhoDuoc kd){
+    void setForm(KhoDuoc kd) {
         txtMaThuoc2.setText(kd.getMaThuoc());
         txtTenThuoc.setText(kd.getTenThuoc());
         txtSoLuong2.setText(String.valueOf(kd.getSoLuong()));
@@ -740,9 +735,9 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
         txtNgayXuat.setText(XDate.toString(kd.getNgayXuat(), "dd/MM/yyyy"));
         txtGhiChu2.setText(kd.getGhiChu());
     }
-    
+
     //lấy dữ liệu từ form
-    KhoDuoc getForm(){
+    KhoDuoc getForm() {
         KhoDuoc kd = new KhoDuoc();
         kd.setMaThuoc(txtMaThuoc2.getText());
         kd.setTenThuoc(txtTenThuoc.getText());
@@ -753,29 +748,59 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
         kd.setGhiChu(txtGhiChu2.getText());
         return kd;
     }
-    
+
+    public void fillTable1() {
+        DefaultTableModel model = (DefaultTableModel) tblDanhSachDatThuoc.getModel();
+        model.setRowCount(0);
+        try {
+            List<DatThuoc> list = DTdao.selectAll();
+            for (DatThuoc kd : list) {
+                Object[] row = {
+                    kd.getTenThuoc(),
+                    kd.getSoLuong(),
+                    kd.getGhiChu()
+                };
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lá»—i truy váº¥n dá»¯ liá»‡u!");
+        }
+    }
+
+    DatThuoc getForm1() {
+        DatThuoc dt = new DatThuoc();
+        dt.setTenThuoc(txtTenThuoc1.getText());
+        dt.setSoLuong(Integer.valueOf(txtSoLuong.getText()));
+        dt.setGhiChu(txtGhiChu.getText());
+        return dt;
+    }
+
     //nút điều hướng table
-    void first(){
+    void first() {
         this.row = 0;
         this.edit();
     }
-    void previous(){
-        if(this.row > 0){
+
+    void previous() {
+        if (this.row > 0) {
             this.row--;
             this.edit();
         }
     }
-    void next(){
-        if(this.row < tblKhoDuoc.getRowCount() - 1){
+
+    void next() {
+        if (this.row < tblKhoDuoc.getRowCount() - 1) {
             this.row++;
             this.edit();
         }
     }
-    void last(){
-         this.row = tblKhoDuoc.getRowCount() - 1;
+
+    void last() {
+        this.row = tblKhoDuoc.getRowCount() - 1;
         this.edit();
     }
-    void updateStatus(){
+
+    void updateStatus() {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblKhoDuoc.getRowCount() - 1);
@@ -784,15 +809,15 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
         btnThem.setEnabled(!edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
-        
+
         // Trạng thái điều hướng
         btnFirst.setEnabled(edit && !first);
         btnPrevious.setEnabled(edit && !first);
         btnNext.setEnabled(edit && !last);
         btnLast.setEnabled(edit && !last);
     }
-    
-    public void clearForm(){
+
+    public void clearForm() {
         txtMaThuoc2.setText("");
         txtMaThuoc2.setEditable(true);
         txtSoLuong2.setText("");
@@ -804,5 +829,55 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
         btnThem.setEnabled(true);
         btnSua.setEnabled(false);
         btnXoa.setEnabled(false);
+    }
+
+    public void xoa() {
+        String mathuoc = txtMaThuoc2.getText();
+        try {
+            KDdao.delete(mathuoc);
+            this.fillTable();
+            this.clearForm();
+            JOptionPane.showMessageDialog(this, "Xoa thanh Cong!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Xoa that bai !");
+        }
+    }
+
+    public void them() {
+        KhoDuoc kd = getForm();
+        try {
+            KDdao.insert(kd);
+            this.fillTable();
+            this.clearForm();
+            JOptionPane.showMessageDialog(this, "Them moi thanh cong !");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.toString());
+        }
+    }
+
+    public void sua() {
+        KhoDuoc kd = getForm();
+        String mathuoc = txtMaThuoc2.getText();
+        try {
+            KDdao.update(kd, mathuoc);
+            this.fillTable();
+            JOptionPane.showMessageDialog(this, "Cap nhat thanh cong !");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.toString());
+        }
+    }
+
+    public void dat() {
+        DatThuoc dt = getForm1();
+        try {
+            DTdao.insert(dt);
+            this.fillTable1();
+            txtTenThuoc1.setText("");
+            txtSoLuong.setText("");
+            txtGhiChu.setText("");
+            JOptionPane.showMessageDialog(this, "Dat thuoc thanh cong !");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.toString());
+        }
     }
 }

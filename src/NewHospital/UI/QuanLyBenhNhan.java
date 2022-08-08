@@ -21,8 +21,10 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
      * Creates new form QuanLyBenhNhan1
      */
     public QuanLyBenhNhan() {
+        row=0;
         initComponents();
         init();
+        line();
     }
 
     /**
@@ -85,6 +87,11 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
         btnTimKiem.setForeground(new java.awt.Color(0, 0, 204));
         btnTimKiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/search.png"))); // NOI18N
         btnTimKiem.setText("Tìm kiếm");
+        btnTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimKiemActionPerformed(evt);
+            }
+        });
 
         tblBenhNhan.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         tblBenhNhan.setModel(new javax.swing.table.DefaultTableModel(
@@ -144,10 +151,25 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
         });
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/lui.png"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/tien.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/cuoi.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -509,6 +531,7 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        first();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -517,16 +540,13 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtMaBNActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnThemActionPerformed
+them();    }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnXoaActionPerformed
+xoa();    }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSuaActionPerformed
+sua();    }//GEN-LAST:event_btnSuaActionPerformed
 
     private void txtNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgaySinhActionPerformed
         // TODO add your handling code here:
@@ -552,6 +572,25 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
             this.edit();
         }
     }//GEN-LAST:event_tblBenhNhanMouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        previous();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        next();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        last();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTimKiemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -651,4 +690,101 @@ public class QuanLyBenhNhan extends javax.swing.JInternalFrame {
         txtCMND.setText(bn.getCmnd());
     }
 
+    TT_BenhNhan getForm() {
+        TT_BenhNhan bn = new TT_BenhNhan();
+        bn.setMaBN(txtMaBN.getText());
+        bn.setHoTen(txtHoVaTen.getText());
+        if (rdoNam.equals(true)) {
+            bn.setGioiTinh(true);
+        } else {
+            bn.setGioiTinh(false);
+        }
+        bn.setNgaySinh(XDate.toDate(txtNgaySinh.getText(), "dd/MM/yyyy"));
+        bn.setSoDT(txtSDT.getText());
+        bn.setEmail(txtEmail.getText());
+        bn.setCmnd(txtCMND.getText());
+        bn.setDiaChi(txtDiaChi.getText());
+        return bn;
+    }
+
+    public void them() {
+        TT_BenhNhan bn = getForm();
+        try {
+            BNdao.insert(bn);
+            this.fillTable();
+            this.clearForm();
+            JOptionPane.showMessageDialog(this, "Them moi thanh cong !");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.toString());
+        }
+    }
+
+    private void sua() {
+        TT_BenhNhan bn = getForm();
+        String maBN = txtMaBN.getText();
+        try {
+            BNdao.update(bn, maBN);
+            this.fillTable();
+            this.clearForm();
+            JOptionPane.showMessageDialog(this, "Cap nhat thanh cong !");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.toString());
+        }
+    }
+
+    private void xoa() {
+        String maBN = txtMaBN.getText();
+        try {
+            BNdao.delete(maBN);
+            this.fillTable();
+            this.clearForm();
+            JOptionPane.showMessageDialog(this, "Xoa thanh Cong!");
+            tabs.setSelectedIndex(0);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Xoa that bai !");
+        }
+    }
+
+    private void clearForm() {
+        txtHoVaTen.setText("");
+        txtCMND.setText("");
+        txtDiaChi.setText("");
+        txtHoVaTen.setText("");
+        txtEmail.setText("");
+        txtMaBN.setText("");
+        txtNgaySinh.setText("");
+        txtSDT.setText("");
+        rdoNam.setSelected(true);
+        txtTimKiem.setText("");
+    }
+
+    //nút điều hướng table
+    void line() {
+        tblBenhNhan.setRowSelectionInterval(row, row);
+    }
+
+    void first() {
+        this.row = 0;
+        tblBenhNhan.setRowSelectionInterval(row, row);
+        line();
+    }
+
+    void previous() {
+        if (this.row > 0) {
+            this.row--;
+        }
+        line();
+    }
+
+    void next() {
+        if (this.row < tblBenhNhan.getRowCount() - 1) {
+            this.row++;
+        }
+        line();
+    }
+
+    void last() {
+        this.row = tblBenhNhan.getRowCount() - 1;
+        line();
+    }
 }

@@ -135,7 +135,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel5" min="-2" pref="98" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtMaThuoc" max="32767" attributes="0"/>
+                                      <Component id="txtTenThuoc1" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel7" min="-2" pref="98" max="-2" attributes="0"/>
@@ -164,7 +164,7 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel5" min="-2" pref="36" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="txtMaThuoc" max="32767" attributes="0"/>
+                                      <Component id="txtTenThuoc1" max="32767" attributes="0"/>
                                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -230,7 +230,7 @@
                         <Property name="text" type="java.lang.String" value="Ghi Ch&#xfa;"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtMaThuoc">
+                    <Component class="javax.swing.JTextField" name="txtTenThuoc1">
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtSoLuong">
                     </Component>
@@ -251,9 +251,6 @@
                     </Container>
                     <Component class="javax.swing.JButton" name="btnDat">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="15" style="1"/>
                         </Property>
@@ -367,7 +364,6 @@
                           </Table>
                         </Property>
                         <Property name="focusable" type="boolean" value="false"/>
-                        <Property name="rowHeight" type="int" value="25"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
@@ -597,9 +593,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnFirst">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/NewHospital/Icons/dau.png"/>
                             </Property>
@@ -610,9 +603,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnPrevious">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/NewHospital/Icons/lui.png"/>
                             </Property>
@@ -623,9 +613,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnNext">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/NewHospital/Icons/tien.png"/>
                             </Property>
@@ -636,9 +623,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnLast">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/NewHospital/Icons/cuoi.png"/>
                             </Property>
