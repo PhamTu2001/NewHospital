@@ -7,7 +7,6 @@ package NewHospital.UI;
 import NewHospital.DAO.NhanVienDAO;
 import NewHospital.Helper.XDate;
 import NewHospital.Helper.XImage;
-//import NewHospital.Helper.dateHelper;
 import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.TT_NhanVien;
 import java.io.File;
@@ -457,7 +456,6 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
         );
 
         lblHinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHinh.setText("Ảnh 3x4");
         lblHinh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblHinhMouseClicked(evt);
