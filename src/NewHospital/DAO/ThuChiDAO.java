@@ -47,7 +47,7 @@ public class ThuChiDAO {
          JDBC.executeUpdate(sql,
              entity.getMaGD(),
              entity.getNoiDung(),
-             entity.getNgayThucHien(),         
+             new java.sql.Date(entity.getNgayThucHien().getTime()),         
              entity.getSoTien(),
              entity.isLoai(),
              entity.getMaNV());
@@ -57,7 +57,7 @@ public class ThuChiDAO {
         String sql="UPDATE ThuChi SET NoiDung=?, NgayThucHien=?, SoTien=?, Loai=?, MaNV=? WHERE MaGD=?";
         JDBC.executeUpdate(sql,            
                  model.getNoiDung(),
-                 model.getNgayThucHien(),
+                 new java.sql.Date(model.getNgayThucHien().getTime()),
                  model.getSoTien(),
                  model.isLoai(),
                  model.getMaNV(),

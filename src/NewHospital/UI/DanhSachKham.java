@@ -128,7 +128,7 @@ public class DanhSachKham extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addComponent(btnTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -141,10 +141,10 @@ public class DanhSachKham extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnKham.setBackground(new java.awt.Color(204, 204, 255));
+        btnKham.setBackground(new java.awt.Color(255, 255, 255));
         btnKham.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnKham.setForeground(new java.awt.Color(255, 51, 51));
-        btnKham.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Address book.png"))); // NOI18N
+        btnKham.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Heart.png"))); // NOI18N
         btnKham.setText("Thực hiện khám");
         btnKham.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -441,15 +441,15 @@ public class DanhSachKham extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnKhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhamActionPerformed
-        // TODO add your handling code here:
+        
+        PhieuKham phieuKham2 = new PhieuKham();
+        getParent().add(phieuKham2);
+        phieuKham2.show();
     }//GEN-LAST:event_btnKhamActionPerformed
 
     private void txtNgayKhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayKhamActionPerformed
         // TODO add your handling code here:
         //JInternalFrame phieuKham = new JInternalFrame();
-        PhieuKham phieuKham2 = new PhieuKham();
-        getParent().add(phieuKham2);
-        phieuKham2.show();
     }//GEN-LAST:event_txtNgayKhamActionPerformed
 
     private void tblKhamBenhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhamBenhMouseClicked

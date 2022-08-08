@@ -92,4 +92,6 @@ public class DanhSachKhamDAO {
         String sql="DELETE FROM ListChoKham WHERE STT=?";
         JDBC.executeUpdate(sql, STT);
     }
+    
+
 }
