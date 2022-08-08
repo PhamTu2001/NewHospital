@@ -1,14 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+
 package NewHospital.UI;
 
 import NewHospital.DAO.ThuChiDAO;
 import NewHospital.Helper.XDate;
 import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.ThuChi;
-import static java.awt.Color.white;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -50,13 +46,6 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         }
     }
     
-//    void edit() {
-//        String maGD = (String) tblQuanLyThuChi.getValueAt(this.row, 0);
-//        ThuChi nv = TCdao.selectById(maGD);
-//        this.setForm(nv);
-//        //this.updateStatus();
-//        jTabbedPane4.setSelectedIndex(1);
-//    }
     
     void setForm(ThuChi tc) {
         txtMaGiaoDich.setText(tc.getMaGD());
