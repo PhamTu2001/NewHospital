@@ -95,7 +95,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         }
     }
     void delete() {
-            String magd = txtMaGiaoDich.getText();
+            String magd = (String) txtMaGiaoDich.getText();
             if (dialogHelper.confirm(this, "Do you want to delete this?")) {
                 try {
                     TCdao.delete(magd);
@@ -109,10 +109,12 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         }
     
     void clearForm() {
-        ThuChi nh = new ThuChi();
-        this.setForm(nh);
-        this.row = -1;
-        this.updateStatus();
+//        ThuChi nh = new ThuChi();
+//        this.setForm(nh);
+//        this.row = -1;
+//        this.updateStatus();
+          this.setForm(new ThuChi());
+          this.setStatus(true);
     }
     
     void updateStatus() {
@@ -164,7 +166,6 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         tblQuanLyThuChi = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         txtMaGiaoDich = new javax.swing.JTextField();
@@ -264,16 +265,6 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 204, 204));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/delete.png"))); // NOI18N
-        jButton3.setText("Xóa");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -281,17 +272,13 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 10, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -447,7 +434,6 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addComponent(btnNext)
                         .addGap(30, 30, 30)))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnLast)
                     .addComponent(btnIn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -645,10 +631,6 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        delete();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void txtMaGiaoDichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaGiaoDichActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMaGiaoDichActionPerformed
@@ -719,7 +701,6 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
     private javax.swing.ButtonGroup btnThuChi;
     private javax.swing.JButton btnXoa;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

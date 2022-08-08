@@ -443,6 +443,7 @@ public class DanhSachKham extends javax.swing.JInternalFrame {
     private void btnKhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhamActionPerformed
         
         PhieuKham phieuKham2 = new PhieuKham();
+        this.setVisible(false);
         getParent().add(phieuKham2);
         phieuKham2.show();
     }//GEN-LAST:event_btnKhamActionPerformed
