@@ -7,8 +7,11 @@ package NewHospital.Helper;
 
 import static java.awt.Color.pink;
 import static java.awt.Color.white;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -22,7 +25,7 @@ public class checked {
             return true;
         } else {
             txt.setBackground(pink);
-            dialogHelper.alert(txt.getRootPane(), "Không được để trống " + txt.getName());
+            dialogHelper.alert(txt.getRootPane(), "Không được để trống Tài Khoản " + txt.getName());
             return false;
         }
     }
@@ -32,7 +35,7 @@ public class checked {
             return true;
         } else {
             txt.setBackground(pink);
-            dialogHelper.alert(txt.getRootPane(), "Không được để trống " + txt.getName());
+            dialogHelper.alert(txt.getRootPane(), "Không được để trống Password " + txt.getName());
             return false;
         }
     }
@@ -57,6 +60,92 @@ public class checked {
         } else {
             txt.setBackground(pink);
             dialogHelper.alert(txt.getRootPane(), txt.getName() + " phải gồm 10 số\nđúng các đầu số của nhà mạng.");
+            return false;
+        }
+    }
+    public static boolean checkMaNV(JTextField txt) {
+        txt.setBackground(white);
+        String id = txt.getText();
+        String rgx = "[a-zA-Z0-9]{1,15}";
+        if (id.matches(rgx)) {
+            return true;
+        } else {
+            txt.setBackground(pink);
+            dialogHelper.alert(txt.getRootPane(), txt.getName() + " phải có 1-15 kí tự\nchữ hoa, thường không dấu hoặc số.");
+            return false;
+        }
+    }
+    public static boolean isValidDate(String inDate) {
+
+        if (inDate == null) {
+            return false;
+        }
+
+        //set the format to use as a constructor argument
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        if (inDate.trim().length() != dateFormat.toPattern().length()) {
+            return false;
+        }
+
+        dateFormat.setLenient(false);
+
+        try {
+            //parse the inDate parameter
+            dateFormat.parse(inDate.trim());
+        } catch (ParseException pe) {
+            return false;
+        }
+        return true;
+    }
+
+    //định dạng dd/MM/yyyy (hoặc d/M/yyyy nếu là số 0 đứng trước)
+    public static boolean checkDate(JTextField txt) {
+        txt.setBackground(white);
+        String id = txt.getText();
+        if (isValidDate(id)) {
+            return true;
+        } else {
+            txt.setBackground(pink);
+            dialogHelper.alert(txt.getRootPane(), txt.getName() + " không đúng định dạng dd/MM/yyyy");
+            return false;
+        }
+    }
+    public static boolean checkEmail(JTextField txt) {
+        txt.setBackground(white);
+        String id = txt.getText();
+        String rgx = "^[a-zA-Z][a-zA-Z0-9_\\.]{2,32}@[a-zA-Z0-9]{2,10}(\\.[a-zA-Z0-9]{2,4}){1,2}$";
+        if (id.matches(rgx)) {
+            return true;
+        } else {
+            txt.setBackground(pink);
+            dialogHelper.alert(txt.getRootPane(), txt.getName() + "Email không đúng định dạng");
+            return false;
+        }
+    }
+    public static boolean checkCMND(JTextField txt){
+        txt.setBackground(white);
+        String id = txt.getText();
+        String rgx = "[0-9]{9,15}";
+        if (id.matches(rgx)) {
+            return true;
+        } else {
+            txt.setBackground(pink);
+            dialogHelper.alert(txt.getRootPane(), txt.getName() + "CMND/CCCD phải từ 9 đến 15 số");
+            return false;
+        }
+    }
+    //bất kì kí tự nào
+    //từ 3-255 kí tự
+    public static boolean checkMoTaCD(JTextArea txt) {
+        txt.setBackground(white);
+        String id = txt.getText();
+        String rgx = ".{3,255}";
+        if (id.matches(rgx)) {
+            return true;
+        } else {
+            txt.setBackground(pink);
+            dialogHelper.alert(txt.getRootPane(), txt.getName() + " phải từ 3-255 kí tự.");
             return false;
         }
     }

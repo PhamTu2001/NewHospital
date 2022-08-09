@@ -3,6 +3,7 @@ package NewHospital.UI;
 
 import NewHospital.DAO.AccountsDAO;
 import NewHospital.Helper.UserHelper;
+import NewHospital.Helper.checked;
 import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.Accounts;
 import static java.awt.Color.pink;
@@ -195,6 +196,8 @@ public class DangNhap extends javax.swing.JFrame {
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
         txtTaiKhoan.setBackground(white);
         txtMatKhau.setBackground(white);
+        if(checked.checkNullText(txtTaiKhoan)
+           && checked.checkNullPass(txtMatKhau)){
         if(txtTaiKhoan.getText().trim().length()>0){
             if(txtMatKhau.getPassword().length>0){
                 login();
@@ -205,6 +208,7 @@ public class DangNhap extends javax.swing.JFrame {
         }else{
             txtTaiKhoan.setBackground(pink);
             dialogHelper.alert(this, "Không được để trống tên đăng nhập");
+        } 
         }
     }//GEN-LAST:event_btnDangNhapActionPerformed
 

@@ -6,8 +6,14 @@ package NewHospital.UI;
 
 import NewHospital.DAO.DanhSachKhamDAO;
 import NewHospital.Helper.XDate;
+import NewHospital.Helper.checked;
+import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.DS_ChoKham;
+import NewHospital.Model.TT_BenhNhan;
+import static java.awt.Color.pink;
+import static java.awt.Color.white;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -89,13 +95,15 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 153, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Clien list.png"))); // NOI18N
         jLabel3.setText("Họ tên:");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 153, 0));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Letter.png"))); // NOI18N
         jLabel4.setText("Email");
 
@@ -103,13 +111,15 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
 
         txtNgaySinh.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Date.png"))); // NOI18N
         jLabel5.setText("Ngày sinh:");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 0));
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Call.png"))); // NOI18N
         jLabel6.setText("SĐT");
 
@@ -169,50 +179,66 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 153, 0));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/User group.png"))); // NOI18N
         jLabel11.setText("Giới Tính");
         jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 153, 0));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Home.png"))); // NOI18N
         jLabel7.setText("Địa chỉ ");
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Flow block.png"))); // NOI18N
         jLabel2.setText("Loại khám");
         jLabel2.setToolTipText("");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 153, 0));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Date.png"))); // NOI18N
         jLabel12.setText("Chọn lịch khám:");
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(153, 153, 0));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/List.png"))); // NOI18N
         jLabel13.setText("Triệu chứng bệnh:");
         jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 153, 0));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/User group.png"))); // NOI18N
         jLabel8.setText("CMND/CCCD");
 
+        txtMaBN.setEditable(false);
         txtMaBN.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Heart.png"))); // NOI18N
         jLabel9.setText("Hình thức khám");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel10.setText("Mã BN");
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/Info.png"))); // NOI18N
+        jLabel10.setText("Mã (BN + 5 số cuối CMND)");
 
         txtCmnd.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtCmnd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCmndKeyReleased(evt);
+            }
+        });
 
         txtNgayKham.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
@@ -221,27 +247,25 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
         PanelThongTinLayout.setHorizontalGroup(
             PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelThongTinLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelThongTinLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(PanelThongTinLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel13)))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelThongTinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelThongTinLayout.createSequentialGroup()
                         .addComponent(txtHoTen, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -269,17 +293,17 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
                         .addComponent(txtCmnd, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelThongTinLayout.createSequentialGroup()
                         .addComponent(cboLoaiKham, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(76, 76, 76)
-                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMaBN, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtMaBN, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelThongTinLayout.createSequentialGroup()
                         .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(txtNgayKham))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelThongTinLayout.createSequentialGroup()
-                .addContainerGap(218, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(219, 219, 219))
         );
@@ -333,7 +357,7 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
                     .addComponent(rdoKhamTrucTiep)
                     .addComponent(btnGui, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -347,8 +371,8 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelThongTin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(PanelThongTin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
 
         pack();
@@ -369,11 +393,51 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
     private void rdoKhamTrucTiepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoKhamTrucTiepActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rdoKhamTrucTiepActionPerformed
-
+    public boolean checkTrungMa(JTextField txt) {
+        txt.setBackground(white);
+        if (DSKhamdao.selectById(txt.getText()) == null) {
+            return true;
+        } else {
+            txt.setBackground(pink);
+            dialogHelper.alert(this, txt.getName() + " đã bị tồn tại.");
+            return false;
+        }
+    }
     private void btnGuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuiActionPerformed
-        // TODO add your handling code here:
-        this.insert();
+        if(checked.checkNullText(txtHoTen)
+           && checked.checkNullText(txtEmail)
+           && checked.checkNullText(txtNgaySinh)
+           && checked.checkNullText(txtSoDT)
+           && checked.checkNullText(txtCmnd)
+           && checked.checkNullText(txtDiaChi)
+           && checked.checkNullText(txtNgayKham)
+           && checked.checkMoTaCD(txtTrieuChung)){
+           if(checked.checkName(txtHoTen)
+              && checked.checkEmail(txtEmail)
+              && checked.checkSDT(txtSoDT)
+              && checked.checkCMND(txtCmnd)
+              && checked.checkDate(txtNgaySinh)
+              && checked.checkDate(txtNgayKham)){
+            if(rdoNam.isSelected()==false && rdoNu.isSelected()==false){
+              dialogHelper.alert(this, "Vui lòng chọn giới tính");
+            }
+            else if(rdoDatLichTruoc.isSelected()==false && rdoKhamTrucTiep.isSelected()==false){
+              dialogHelper.alert(this, "Vui lòng chọn hình thức khám");
+            }
+            else{
+              this.insert();
+              this.dispose();
+            }
+           } 
+        }
     }//GEN-LAST:event_btnGuiActionPerformed
+        
+    private void txtCmndKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCmndKeyReleased
+        if(txtCmnd.getText().length() >= 5){
+        int key = (txtCmnd.getText().length()-5);
+        txtMaBN.setText("BN"+txtCmnd.getText().substring(key));
+        }
+    }//GEN-LAST:event_txtCmndKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -431,15 +495,29 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
         dskham.setMaBN(txtMaBN.getText());
         return dskham;
     }
-    
+    TT_BenhNhan getFormBN(){
+        TT_BenhNhan ttBN = new TT_BenhNhan();
+        ttBN.setMaBN(txtMaBN.getText());
+        ttBN.setHoTen(txtHoTen.getText());
+        ttBN.setGioiTinh(rdoNam.isSelected());
+        ttBN.setNgaySinh(XDate.toDate(txtNgaySinh.getText(), "dd/MM/yyyy"));
+        ttBN.setSoDT(txtSoDT.getText());
+        ttBN.setEmail(txtEmail.getText());
+        ttBN.setCmnd(txtCmnd.getText());
+        ttBN.setDiaChi(txtDiaChi.getText());
+        return ttBN;
+    }
     public void insert(){
         DS_ChoKham dskham = this.getForm();
-        try {
+        TT_BenhNhan ttBN = this.getFormBN();
+        try {   
+                DSKhamdao.insertBN(ttBN);
                 DSKhamdao.insert(dskham); // thêm mới
-                JOptionPane.showMessageDialog(this, "Thêm mới thành công!");
+                JOptionPane.showMessageDialog(this, "Đặt lịch thành công!");
             } 
             catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Thêm mới thất bại!");
+                JOptionPane.showMessageDialog(this, "Đặt lịch thất bại!");
+                System.out.println(e);
             }
     }
 }

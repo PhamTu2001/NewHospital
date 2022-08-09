@@ -29,7 +29,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jDesktopPane1" pref="819" max="32767" attributes="0"/>
           </Group>
-          <Component id="PanelDongHo" pref="1033" max="32767" attributes="0"/>
+          <Component id="PanelDongHo" pref="1038" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">

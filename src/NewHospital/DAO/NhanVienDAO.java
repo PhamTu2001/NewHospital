@@ -30,7 +30,7 @@ public class NhanVienDAO {
                     entity.setGioiTinh(rs.getBoolean("GioiTinh"));
                     entity.setNgaySinh(rs.getDate("NgaySinh"));
                     entity.setSoDT(rs.getString("SoDT"));
-                    entity.setEmail(rs.getString("Email"));
+                    entity.setEmail(rs.getString("Mail"));
                     entity.setDiaChi(rs.getString("DiaChi"));
                     entity.setChucVu(rs.getBoolean("ChucVu"));
 //                    entity.setHinh(rs.getString("Hinh"));

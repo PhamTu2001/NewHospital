@@ -8,6 +8,8 @@ import NewHospital.DAO.AccountsDAO;
 import NewHospital.Helper.checked;
 import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.Accounts;
+import java.awt.Color;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -254,7 +256,7 @@ public class DangKy extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, 570));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, 580));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/bgLogo.jpg"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 590));
@@ -272,16 +274,34 @@ public class DangKy extends javax.swing.JFrame {
         dangNhap.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnQuayLaiActionPerformed
-
+    void checkTrungID(){
+        boolean kiemtra = true;
+            String idnew = txtTaiKhoan.getText();
+                    Accounts list = dao.FindIdNV(idnew);
+                        if(list.getUserName().equals(txtTaiKhoan.getText())){
+                            txtTaiKhoan.setBackground(Color.PINK);
+                            dialogHelper.alert(this, "Tên tài khoản này đã được đặt !");
+                            kiemtra = false;
+                    }
+            if(kiemtra == true){
+                Accounts modelNew = getModel();
+                dao.insert(modelNew);
+                dialogHelper.alert(this, "Tạo tài khoản thành công !");
+                DangNhap dangNhap = new DangNhap();
+                dangNhap.setVisible(true);
+                this.dispose();
+            }
+    }
     private void btnDangKyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangKyActionPerformed
-        Accounts model = getModel();
         if(checked.checkNullText(txtTaiKhoan) &&
           (checked.checkNullPass(txtMatKhau)) &&
-          (checked.checkName(txtHoTen)) &&
-          (checked.checkSDT(txtSdt)) &&
-          (checked.checkNullPass(txtMatKhau2))
+          (checked.checkNullText(txtHoTen)) &&
+          (checked.checkNullText(txtSdt)) &&
+          (checked.checkNullText(txtMatKhau2))
         ){
-            if((rdoNhanVien.isSelected() == false && rdoQuanLy.isSelected() == false)){
+         if(checked.checkName(txtHoTen) && 
+              (checked.checkSDT(txtSdt))){
+             if((rdoNhanVien.isSelected() == false && rdoQuanLy.isSelected() == false)){
                 JOptionPane.showMessageDialog(this,"Hãy chọn chức vụ");
                 checkin = false;
             }
@@ -290,16 +310,14 @@ public class DangKy extends javax.swing.JFrame {
                 checkin = false;
             }
             else if(checkin == true){
-                dao.insert(model);
-                dialogHelper.alert(this, "Tạo tài khoản thành công !");
-                DangNhap dangNhap = new DangNhap();
-                dangNhap.setVisible(true);
-                this.dispose();
+                  checkTrungID();
             }
             else{
                 dialogHelper.alert(this, "Tạo tài khoản thất bại !");
             }
         }
+    }
+    
     }//GEN-LAST:event_btnDangKyActionPerformed
 
     private void txtHoTenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoTenActionPerformed

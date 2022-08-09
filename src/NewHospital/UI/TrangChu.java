@@ -11,7 +11,7 @@ import java.util.Calendar;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+
 
 /**
  *
@@ -320,43 +320,43 @@ public class TrangChu extends javax.swing.JFrame {
 
     private void btnDatLichKhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatLichKhamActionPerformed
         // TODO add your handling code here:
-//        if (UserHelper.authenticated()) {
+        if (UserHelper.authenticated()) {
             DatLichKhamBN datLich = new DatLichKhamBN();
             openX(datLich);
-//        } else {
-//            dialogHelper.alert(this, "Vui lòng đăng nhập!");
-//        }
+        } else {
+            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+        }
 
     }//GEN-LAST:event_btnDatLichKhamActionPerformed
 
     private void btnDanhSachKhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDanhSachKhamActionPerformed
         // TODO add your handling code here:
-//        if (UserHelper.authenticated()) {
+        if (UserHelper.authenticated()) {
             DanhSachKham danhSachKham = new DanhSachKham();
             openX(danhSachKham);
-//        } else {
-//            dialogHelper.alert(this, "Vui lòng đăng nhập!");
-//        }
+        } else {
+            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+        }
     }//GEN-LAST:event_btnDanhSachKhamActionPerformed
 
     private void btnThongTinBenhNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongTinBenhNhanActionPerformed
         // TODO add your handling code here:
-//        if(UserHelper.authenticated()){
+        if(UserHelper.authenticated()){
             QuanLyBenhNhan benhNhan = new QuanLyBenhNhan();
             openX(benhNhan);
-//        }else {
-//            dialogHelper.alert(this, "Vui lòng đăng nhập!");
-//        }
+        }else {
+            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+        }
     }//GEN-LAST:event_btnThongTinBenhNhanActionPerformed
 
     private void btnKhoDuocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhoDuocActionPerformed
         // TODO add your handling code here:
-        //if(UserHelper.authenticated()){
+        if(UserHelper.authenticated()){
             KhoDuocUI khoDuoc = new KhoDuocUI();
             openX(khoDuoc);
-        //}else {
-            //dialogHelper.alert(this, "Vui lòng đăng nhập!");
-        //}
+        }else {
+            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+        }
     }//GEN-LAST:event_btnKhoDuocActionPerformed
 
     private void btnQuanLyThuChiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuanLyThuChiActionPerformed
@@ -371,30 +371,30 @@ public class TrangChu extends javax.swing.JFrame {
 
     private void btnBaoCaoThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaoCaoThongKeActionPerformed
         // TODO add your handling code here:
-//        if(UserHelper.authenticated()){
-//            if(UserHelper.USER.isVaiTro() == false){
+        if(UserHelper.authenticated()){
+            if(UserHelper.USER.isVaiTro() == false){
                 BaoCaoThongKe baoCao = new BaoCaoThongKe();
                 openX(baoCao);
-//            }
-//            else{
-//                dialogHelper.alert(this, "Chỉ Quản Lý mới xem được báo cáo - thống kê !");
-//            }
-//        }else {
-//            dialogHelper.alert(this, "Vui lòng đăng nhập!");
-//        }
-//        BaoCaoThongKe baoCao = new BaoCaoThongKe();
-//        jDesktopPane1.add(baoCao);
-//        baoCao.show();
+            }
+            else{
+                dialogHelper.alert(this, "Chỉ Quản Lý mới xem được báo cáo - thống kê !");
+            }
+        }else {
+            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+        }
+        BaoCaoThongKe baoCao = new BaoCaoThongKe();
+        jDesktopPane1.add(baoCao);
+        baoCao.show();
     }//GEN-LAST:event_btnBaoCaoThongKeActionPerformed
 
     private void btnThongTinNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongTinNhanVienActionPerformed
         // TODO add your handling code here:
-//        if(UserHelper.authenticated()){
+        if(UserHelper.authenticated()){
             QuanLyNhanVien nhanVien = new QuanLyNhanVien();
             openX(nhanVien);
-//        }else {
-//            dialogHelper.alert(this, "Vui lòng đăng nhập!");
-//        }
+        }else {
+            dialogHelper.alert(this, "Vui lòng đăng nhập!");
+        }
     }//GEN-LAST:event_btnThongTinNhanVienActionPerformed
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
