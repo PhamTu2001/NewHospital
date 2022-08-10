@@ -29,7 +29,7 @@ public class BenhNhanDAO {
                     entity.setGioiTinh(rs.getBoolean("GioiTinh"));
                     entity.setNgaySinh(rs.getDate("NgaySinh"));
                     entity.setSoDT(rs.getString("SoDT"));
-                    entity.setEmail(rs.getString("Email"));
+                    entity.setEmail(rs.getString("Mail"));
                     entity.setCmnd(rs.getString("CMND"));
                     entity.setDiaChi(rs.getString("DiaChi"));
                     list.add(entity);

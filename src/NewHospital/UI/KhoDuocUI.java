@@ -212,7 +212,7 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel3.setText("Danh Sách Đặt Thuốc");
+        jLabel3.setText("Danh Sách Thuốc Đang Đặt :");
 
         tblKhoDuoc.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         tblKhoDuoc.setModel(new javax.swing.table.DefaultTableModel(
@@ -266,17 +266,17 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(pnlDanhSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnlDSDatThuoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(pnlDanhSachLayout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 312, Short.MAX_VALUE))
-                            .addComponent(pnlDSDatThuoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane3))
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE))
                 .addContainerGap())
         );
         pnlDanhSachLayout.setVerticalGroup(
             pnlDanhSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDanhSachLayout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(pnlDanhSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -583,7 +583,7 @@ public class KhoDuocUI extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtTenThuocActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-sua();    }//GEN-LAST:event_btnSuaActionPerformed
+        sua();    }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
 xoa();    }//GEN-LAST:event_btnXoaActionPerformed
@@ -689,7 +689,7 @@ them();    }//GEN-LAST:event_btnThemActionPerformed
     public void init() {
         this.fillTable();
         this.row = -1;
-                this.fillTable1();
+        this.fillTable1();
 
         this.updateStatus();
     }
@@ -763,7 +763,7 @@ them();    }//GEN-LAST:event_btnThemActionPerformed
                 model.addRow(row);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Lá»—i truy váº¥n dá»¯ liá»‡u!");
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu !");
         }
     }
 
@@ -837,9 +837,9 @@ them();    }//GEN-LAST:event_btnThemActionPerformed
             KDdao.delete(mathuoc);
             this.fillTable();
             this.clearForm();
-            JOptionPane.showMessageDialog(this, "Xoa thanh Cong!");
+            JOptionPane.showMessageDialog(this, "Xóa thành công !");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Xoa that bai !");
+            JOptionPane.showMessageDialog(this, "Xóa thất bại !");
         }
     }
 
@@ -849,9 +849,10 @@ them();    }//GEN-LAST:event_btnThemActionPerformed
             KDdao.insert(kd);
             this.fillTable();
             this.clearForm();
-            JOptionPane.showMessageDialog(this, "Them moi thanh cong !");
+            JOptionPane.showMessageDialog(this, "Thêm mới thành công !");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.toString());
+            JOptionPane.showMessageDialog(this, "Thêm mới thất bại !");
         }
     }
 
@@ -861,7 +862,7 @@ them();    }//GEN-LAST:event_btnThemActionPerformed
         try {
             KDdao.update(kd, mathuoc);
             this.fillTable();
-            JOptionPane.showMessageDialog(this, "Cap nhat thanh cong !");
+            JOptionPane.showMessageDialog(this, "Cập nhật thành công !");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.toString());
         }
@@ -875,9 +876,10 @@ them();    }//GEN-LAST:event_btnThemActionPerformed
             txtTenThuoc1.setText("");
             txtSoLuong.setText("");
             txtGhiChu.setText("");
-            JOptionPane.showMessageDialog(this, "Dat thuoc thanh cong !");
+            JOptionPane.showMessageDialog(this, "Đặt thuốc thành công !");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.toString());
+            JOptionPane.showMessageDialog(this, "Đặt thuốc thất bại !");
         }
     }
 }

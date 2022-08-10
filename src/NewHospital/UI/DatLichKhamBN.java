@@ -4,6 +4,7 @@
  */
 package NewHospital.UI;
 
+import NewHospital.DAO.BenhNhanDAO;
 import NewHospital.DAO.DanhSachKhamDAO;
 import NewHospital.Helper.XDate;
 import NewHospital.Helper.checked;
@@ -12,6 +13,7 @@ import NewHospital.Model.DS_ChoKham;
 import NewHospital.Model.TT_BenhNhan;
 import static java.awt.Color.pink;
 import static java.awt.Color.white;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -477,7 +479,7 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
 
     int row = -1;
     DanhSachKhamDAO DSKhamdao = new DanhSachKhamDAO();
-    
+    BenhNhanDAO DSBNdao = new BenhNhanDAO(); 
     public void init(){
         
     }
@@ -507,11 +509,24 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
         ttBN.setDiaChi(txtDiaChi.getText());
         return ttBN;
     }
+    
+    void checkTrungBN(){
+        TT_BenhNhan ttBN = this.getFormBN();
+        boolean check = true;
+        List<TT_BenhNhan> listBN = DSBNdao.selectAll();
+        for(int i = 0 ; i < listBN.size();i++){
+            if(listBN.get(i).getCmnd().equals(txtCmnd.getText())){
+                check = false;
+            }
+        }
+        if(check == true){
+            DSKhamdao.insertBN(ttBN);
+        }
+    }
     public void insert(){
         DS_ChoKham dskham = this.getForm();
-        TT_BenhNhan ttBN = this.getFormBN();
         try {   
-                DSKhamdao.insertBN(ttBN);
+                checkTrungBN();
                 DSKhamdao.insert(dskham); // thêm mới
                 JOptionPane.showMessageDialog(this, "Đặt lịch thành công!");
             } 
