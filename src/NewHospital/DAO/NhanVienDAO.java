@@ -30,10 +30,10 @@ public class NhanVienDAO {
                     entity.setGioiTinh(rs.getBoolean("GioiTinh"));
                     entity.setNgaySinh(rs.getDate("NgaySinh"));
                     entity.setSoDT(rs.getString("SoDT"));
-                    entity.setEmail(rs.getString("Mail"));
+                    entity.setEmail(rs.getString("Email"));
                     entity.setDiaChi(rs.getString("DiaChi"));
                     entity.setChucVu(rs.getBoolean("ChucVu"));
-//                    entity.setHinh(rs.getString("Hinh"));
+                    entity.setHinh(rs.getString("Hinh"));
                     list.add(entity);
                 }
             } finally {
@@ -57,7 +57,6 @@ public class NhanVienDAO {
              entity.getEmail(),
              entity.getDiaChi(),
              entity.getHinh(),
-//             entity.getHinh(),
              entity.isChucVu());
     }
         
@@ -95,6 +94,10 @@ public class NhanVienDAO {
     public TT_NhanVien selectById(String maNV) {
         String sql = "SELECT * FROM NhanVien WHERE MaNV=?";
         List<TT_NhanVien> list = selectBySql(sql, maNV);
-        return list.size() > 0 ? list.get(0) : null;
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list.get(0);
+//        return list.size() > 0 ? list.get(0) : null;
     }
 }
