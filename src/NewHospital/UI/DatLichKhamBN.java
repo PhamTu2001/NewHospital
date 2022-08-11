@@ -520,7 +520,7 @@ public class DatLichKhamBN extends javax.swing.JInternalFrame {
             }
         }
         if(check == true){
-            DSKhamdao.insertBN(ttBN);
+            DSBNdao.insert(ttBN);
         }
     }
     public void insert(){

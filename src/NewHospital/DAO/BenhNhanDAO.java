@@ -57,12 +57,12 @@ public class BenhNhanDAO {
         return list.size() > 0 ? list.get(0) : null;
     }
     public void insert(TT_BenhNhan model) {
-        String sql = "INSERT INTO BenhNhan (MaBN, HoTen, GioiTinh, NgaySinh, SoDT, Email, CMND, DiaChi) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO BenhNhan (MaBN, HoTen, GioiTinh, NgaySinh, SoDT, Mail, CMND, DiaChi) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         JDBC.executeUpdate(sql,
                 model.getMaBN(),
                 model.getHoTen(),
                 model.isGioiTinh(),
-                model.getNgaySinh(),
+                new java.sql.Date(model.getNgaySinh().getTime()),
                 model.getSoDT(),
                 model.getEmail(),
                 model.getCmnd(),
@@ -70,16 +70,16 @@ public class BenhNhanDAO {
     }
 
     public void update(TT_BenhNhan model,String maBN) {
-        String sql = "UPDATE BenhNhan SET HoTen=?, GioiTinh=?, NgaySinh=?, SoDT=?, Email=?, CMND=?, DiaChi=? where MaBN=?";
+        String sql = "UPDATE BenhNhan SET HoTen=?, GioiTinh=?, NgaySinh=?, SoDT=?, Mail=?, CMND=?, DiaChi=? where MaBN=?";
         JDBC.executeUpdate(sql,
                 model.getHoTen(),
                 model.isGioiTinh(),
-                model.getNgaySinh(),
+                new java.sql.Date(model.getNgaySinh().getTime()),
                 model.getSoDT(),
                 model.getEmail(),
                 model.getCmnd(),
                 model.getDiaChi(),
-                maBN);
+                model.getMaBN());
     }
 
     public void delete(String maBN) {

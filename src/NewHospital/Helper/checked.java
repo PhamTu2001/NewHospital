@@ -63,15 +63,15 @@ public class checked {
             return false;
         }
     }
-    public static boolean checkMaNV(JTextField txt) {
+    public static boolean checkMaThuoc(JTextField txt) {
         txt.setBackground(white);
         String id = txt.getText();
-        String rgx = "[a-zA-Z0-9]{1,15}";
+        String rgx = "[a-zA-Z0-9]{1,10}";
         if (id.matches(rgx)) {
             return true;
         } else {
             txt.setBackground(pink);
-            dialogHelper.alert(txt.getRootPane(), txt.getName() + " phải có 1-15 kí tự\nchữ hoa, thường không dấu hoặc số.");
+            dialogHelper.alert(txt.getRootPane(), txt.getName() + " phải có 1-10 kí tự\nchữ hoa, thường không dấu hoặc số.");
             return false;
         }
     }
@@ -146,6 +146,18 @@ public class checked {
         } else {
             txt.setBackground(pink);
             dialogHelper.alert(txt.getRootPane(), txt.getName() + " phải từ 3-255 kí tự.");
+            return false;
+        }
+    }
+    public static boolean checkSoLuong(JTextField txt){
+        txt.setBackground(white);
+        String id = txt.getText();
+        int num = Integer.valueOf(id);
+        if ( num >= 0) {
+            return true;
+        } else {
+            txt.setBackground(pink);
+            dialogHelper.alert(txt.getRootPane(), txt.getName() + "Số lượng không được nhỏ hơn 0 và không phải kí tự chữ cái ");
             return false;
         }
     }

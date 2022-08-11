@@ -3,6 +3,7 @@ package NewHospital.UI;
 
 import NewHospital.DAO.ThuChiDAO;
 import NewHospital.Helper.XDate;
+import NewHospital.Helper.checked;
 import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.ThuChi;
 import java.util.List;
@@ -646,7 +647,19 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        update();
+        if(checked.checkNullText(txtMaGiaoDich)&&
+           checked.checkNullText(txtNgayThucHien)&&
+           checked.checkNullText(txtMaNV) &&
+           checked.checkNullText(txtSoTienGiaoDich)){
+           if(checked.checkDate(txtNgayThucHien)){
+              if(rdoThu.isSelected() == false & rdoChi.isSelected() == false){
+                  dialogHelper.alert(this, "Vui lòng chọn loại giao dịch !");
+              }
+              else{
+                  update(); 
+              }
+           } 
+        }
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInActionPerformed
@@ -666,8 +679,19 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tblQuanLyThuChiMouseClicked
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        // TODO add your handling code here:
-        insert();
+        if(checked.checkNullText(txtMaGiaoDich)&&
+           checked.checkNullText(txtNgayThucHien)&&
+           checked.checkNullText(txtMaNV) &&
+           checked.checkNullText(txtSoTienGiaoDich)){
+           if(checked.checkDate(txtNgayThucHien)){
+              if(rdoThu.isSelected() == false & rdoChi.isSelected() == false){
+                  dialogHelper.alert(this, "Vui lòng chọn loại giao dịch !");
+              }
+              else{
+                  insert(); 
+              }
+           } 
+        }
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed

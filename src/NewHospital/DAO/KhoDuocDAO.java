@@ -60,9 +60,9 @@ public class KhoDuocDAO {
         JDBC.executeUpdate(sql,
                 model.getMaThuoc(),
                 model.getTenThuoc(),
-                model.getHanSuDung(),
-                model.getNgayNhap(),
-                model.getNgayXuat(),
+                new java.sql.Date(model.getHanSuDung().getTime()),
+                new java.sql.Date(model.getNgayNhap().getTime()),
+                new java.sql.Date(model.getNgayXuat().getTime()),
                 model.getSoLuong(),
                 model.getGhiChu());
     }
@@ -71,9 +71,9 @@ public class KhoDuocDAO {
         String sql = "UPDATE KhoDuoc SET TenThuoc=?, HanSuDung=?, NgayNhap=?, NgayXuat=?, Soluong=?, GhiChu=? where MaThuoc=?";
         JDBC.executeUpdate(sql,
                 model.getTenThuoc(),
-                model.getHanSuDung(),
-                model.getNgayNhap(),
-                model.getNgayXuat(),
+                new java.sql.Date(model.getHanSuDung().getTime()),
+                new java.sql.Date(model.getNgayNhap().getTime()),
+                new java.sql.Date(model.getNgayXuat().getTime()),
                 model.getSoLuong(),
                 model.getGhiChu(),
                 mathuoc);
