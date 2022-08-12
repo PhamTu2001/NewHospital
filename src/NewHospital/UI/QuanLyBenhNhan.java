@@ -807,11 +807,12 @@ xoa();    }//GEN-LAST:event_btnXoaActionPerformed
         TT_BenhNhan bn = new TT_BenhNhan();
         bn.setMaBN(txtMaBN.getText());
         bn.setHoTen(txtHoVaTen.getText());
-        if (rdoNam.equals(true)) {
-            bn.setGioiTinh(true);
-        } else {
-            bn.setGioiTinh(false);
-        }
+//        if (rdoNam.equals(true)) {
+//            bn.setGioiTinh(true);
+//        } else {
+//            bn.setGioiTinh(false);
+//        }
+        bn.setGioiTinh(rdoNam.isSelected());
         bn.setNgaySinh(XDate.toDate(txtNgaySinh.getText(), "dd/MM/yyyy"));
         bn.setSoDT(txtSDT.getText());
         bn.setEmail(txtEmail.getText());

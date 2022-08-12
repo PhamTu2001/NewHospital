@@ -382,9 +382,9 @@ public class TrangChu extends javax.swing.JFrame {
         }else {
             dialogHelper.alert(this, "Vui lòng đăng nhập!");
         }
-        BaoCaoThongKe baoCao = new BaoCaoThongKe();
-        jDesktopPane1.add(baoCao);
-        baoCao.show();
+//        BaoCaoThongKe baoCao = new BaoCaoThongKe();
+//        jDesktopPane1.add(baoCao);
+//        baoCao.show();
     }//GEN-LAST:event_btnBaoCaoThongKeActionPerformed
 
     private void btnThongTinNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongTinNhanVienActionPerformed

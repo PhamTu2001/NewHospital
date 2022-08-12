@@ -30,10 +30,10 @@ public class NhanVienDAO {
                     entity.setGioiTinh(rs.getBoolean("GioiTinh"));
                     entity.setNgaySinh(rs.getDate("NgaySinh"));
                     entity.setSoDT(rs.getString("SoDT"));
-                    entity.setEmail(rs.getString("Email"));
+                    entity.setEmail(rs.getString("Mail"));
                     entity.setDiaChi(rs.getString("DiaChi"));
-                    entity.setChucVu(rs.getBoolean("ChucVu"));
                     entity.setHinh(rs.getString("Hinh"));
+                    entity.setChucVu(rs.getBoolean("ChucVu"));
                     list.add(entity);
                 }
             } finally {
@@ -47,12 +47,12 @@ public class NhanVienDAO {
     }
     
         public void insert(TT_NhanVien entity) {
-        String sql="INSERT INTO NhanVien (MaNV, HoTen, GioiTinh, NgaySinh, SoDT, Email, DiaChi, Hinh, ChucVu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql="INSERT INTO NhanVien (MaNV, HoTen, GioiTinh, NgaySinh, SoDT, Mail, DiaChi, Hinh, ChucVu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
          JDBC.executeUpdate(sql,
              entity.getMaNV(),
              entity.getHoTen(),
              entity.isGioiTinh(),         
-             entity.getNgaySinh(),
+             new java.sql.Date(entity.getNgaySinh().getTime()),
              entity.getSoDT(),
              entity.getEmail(),
              entity.getDiaChi(),
@@ -61,11 +61,11 @@ public class NhanVienDAO {
     }
         
         public void update(TT_NhanVien model) {
-        String sql="UPDATE NhanVien SET HoTen=?, GioiTinh=?, NgaySinh=?, SoDT=?, Email=?, DiaChi=?, Hinh=?, ChucVu=? WHERE MaNV=?";
+        String sql="UPDATE NhanVien SET HoTen=?, GioiTinh=?, NgaySinh=?, SoDT=?, Mail=?, DiaChi=?, Hinh=?, ChucVu=? WHERE MaNV=?";
         JDBC.executeUpdate(sql,            
                  model.getHoTen(),
                  model.isGioiTinh(),
-                 model.getNgaySinh(),
+                 new java.sql.Date(model.getNgaySinh().getTime()),
                  model.getSoDT(),
                  model.getEmail(),
                  model.getDiaChi(),
