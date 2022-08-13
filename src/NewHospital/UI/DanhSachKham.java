@@ -473,7 +473,7 @@ public class DanhSachKham extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnKhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhamActionPerformed
-        
+             
         PhieuKham phieuKham2 = new PhieuKham();
         this.setVisible(false);
         getParent().add(phieuKham2);
