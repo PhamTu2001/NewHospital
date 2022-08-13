@@ -6,12 +6,23 @@ import NewHospital.Helper.XDate;
 import NewHospital.Helper.checked;
 import NewHospital.Helper.dialogHelper;
 import NewHospital.Model.ThuChi;
+import java.awt.Desktop;
 import java.awt.print.PrinterException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class QuanLyThuChi extends javax.swing.JInternalFrame {
@@ -158,6 +169,14 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         }
     }
 
+    public void openFile(String file){
+        try{
+            File path = new File(file);
+            Desktop.getDesktop().open(path);
+        }catch(IOException ioe){
+            System.out.println(ioe);
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -170,6 +189,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         tblQuanLyThuChi = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         txtMaGiaoDich = new javax.swing.JTextField();
@@ -269,6 +289,16 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NewHospital/Icons/printer.png"))); // NOI18N
+        jButton3.setText("Xuất Excel");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -276,13 +306,17 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 10, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 26, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -642,9 +676,8 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Error !", "Printer", JOptionPane.ERROR_MESSAGE);
             }
-            
         } catch (PrinterException ex) {
-            Logger.getLogger(ThuChi.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(ThuChi.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -678,6 +711,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
 
     private void btnInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnInActionPerformed
 
     private void txtMaNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaNVActionPerformed
@@ -728,6 +762,47 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
             this.edit(); 
     }//GEN-LAST:event_btnLastActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try{
+           JFileChooser jFileChooser = new JFileChooser();
+           jFileChooser.showSaveDialog(this);
+           File saveFile = jFileChooser.getSelectedFile();
+           
+           if(saveFile != null){
+               saveFile = new File(saveFile.toString()+".xlsx");
+               Workbook wb = new XSSFWorkbook();
+               Sheet sheet = wb.createSheet("customer");
+               
+               Row rowCol = sheet.createRow(0);
+               for(int i=0;i<tblQuanLyThuChi.getColumnCount();i++){
+                   Cell cell = rowCol.createCell(i);
+                   cell.setCellValue(tblQuanLyThuChi.getColumnName(i));
+               }
+               
+               for(int j=0;j<tblQuanLyThuChi.getRowCount();j++){
+                   Row row = sheet.createRow(j+1);
+                   for(int k=0;k<tblQuanLyThuChi.getColumnCount();k++){
+                       Cell cell = row.createCell(k);
+                       if(tblQuanLyThuChi.getValueAt(j, k)!=null){
+                           cell.setCellValue(tblQuanLyThuChi.getValueAt(j, k).toString());
+                       }
+                   }
+               }
+               FileOutputStream out = new FileOutputStream(new File(saveFile.toString()));
+               wb.write(out);
+               wb.close();
+               out.close();
+               openFile(saveFile.toString());
+           }else{
+               JOptionPane.showMessageDialog(null,"Error al generar archivo");
+           }
+       }catch(FileNotFoundException e){
+           System.out.println(e);
+       }catch(IOException io){
+           System.out.println(io);
+       }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelThongTin;
@@ -741,6 +816,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
     private javax.swing.ButtonGroup btnThuChi;
     private javax.swing.JButton btnXoa;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
