@@ -29,7 +29,7 @@ public class BenhNhanDAO {
                     entity.setGioiTinh(rs.getBoolean("GioiTinh"));
                     entity.setNgaySinh(rs.getDate("NgaySinh"));
                     entity.setSoDT(rs.getString("SoDT"));
-                    entity.setEmail(rs.getString("Mail"));
+                    entity.setEmail(rs.getString("Email"));
                     entity.setCmnd(rs.getString("CMND"));
                     entity.setDiaChi(rs.getString("DiaChi"));
                     list.add(entity);
@@ -56,13 +56,19 @@ public class BenhNhanDAO {
         List<TT_BenhNhan> list = selectBySql(sql, maBN);
         return list.size() > 0 ? list.get(0) : null;
     }
+    public TT_BenhNhan selectByCMND(String CMND){
+        String sql="SELECT * FROM BenhNhan WHERE CMND=?";
+        List<TT_BenhNhan> list = selectBySql(sql, CMND);
+        return list.size() > 0 ? list.get(0) : null;
+    }
+    
     public void insert(TT_BenhNhan model) {
-        String sql = "INSERT INTO BenhNhan (MaBN, HoTen, GioiTinh, NgaySinh, SoDT, Mail, CMND, DiaChi) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO BenhNhan (MaBN, HoTen, GioiTinh, NgaySinh, SoDT, Email, CMND, DiaChi) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         JDBC.executeUpdate(sql,
                 model.getMaBN(),
                 model.getHoTen(),
                 model.isGioiTinh(),
-                new java.sql.Date(model.getNgaySinh().getTime()),
+                model.getNgaySinh(),
                 model.getSoDT(),
                 model.getEmail(),
                 model.getCmnd(),
@@ -70,20 +76,24 @@ public class BenhNhanDAO {
     }
 
     public void update(TT_BenhNhan model,String maBN) {
-        String sql = "UPDATE BenhNhan SET HoTen=?, GioiTinh=?, NgaySinh=?, SoDT=?, Mail=?, CMND=?, DiaChi=? where MaBN=?";
+        String sql = "UPDATE BenhNhan SET HoTen=?, GioiTinh=?, NgaySinh=?, SoDT=?, Email=?, CMND=?, DiaChi=? where MaBN=?";
         JDBC.executeUpdate(sql,
                 model.getHoTen(),
                 model.isGioiTinh(),
-                new java.sql.Date(model.getNgaySinh().getTime()),
+                model.getNgaySinh(),
                 model.getSoDT(),
                 model.getEmail(),
                 model.getCmnd(),
                 model.getDiaChi(),
-                model.getMaBN());
+                maBN);
     }
 
     public void delete(String maBN) {
         String sql = "DELETE FROM BenhNhan WHERE MaBN=?";
         JDBC.executeUpdate(sql, maBN);
+    }
+    public List<TT_BenhNhan> selectNotInCourse(String keyword) {
+        String sql="SELECT * FROM BenhNhan WHERE HoTen LIKE ? ";
+        return this.selectBySql(sql, "%"+keyword+"%");
     }
 }

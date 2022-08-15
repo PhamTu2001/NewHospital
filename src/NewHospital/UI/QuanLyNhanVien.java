@@ -27,11 +27,11 @@ import javax.swing.UIManager;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//import org.apache.poi.ss.usermodel.Cell;
+//import org.apache.poi.ss.usermodel.Row;
+//import org.apache.poi.ss.usermodel.Sheet;
+//import org.apache.poi.ss.usermodel.Workbook;
+//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 /**
@@ -676,44 +676,44 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
 
 
     private void btnXuatexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatexActionPerformed
-        try{
-           JFileChooser jFileChooser = new JFileChooser();
-           jFileChooser.showSaveDialog(this);
-           File saveFile = jFileChooser.getSelectedFile();
-           
-           if(saveFile != null){
-               saveFile = new File(saveFile.toString()+".xlsx");
-               Workbook wb = new XSSFWorkbook();
-               Sheet sheet = wb.createSheet("customer");
-               
-               Row rowCol = sheet.createRow(0);
-               for(int i=0;i<tblNhanVien.getColumnCount();i++){
-                   Cell cell = rowCol.createCell(i);
-                   cell.setCellValue(tblNhanVien.getColumnName(i));
-               }
-               
-               for(int j=0;j<tblNhanVien.getRowCount();j++){
-                   Row row = sheet.createRow(j+1);
-                   for(int k=0;k<tblNhanVien.getColumnCount();k++){
-                       Cell cell = row.createCell(k);
-                       if(tblNhanVien.getValueAt(j, k)!=null){
-                           cell.setCellValue(tblNhanVien.getValueAt(j, k).toString());
-                       }
-                   }
-               }
-               FileOutputStream out = new FileOutputStream(new File(saveFile.toString()));
-               wb.write(out);
-               wb.close();
-               out.close();
-               openFile(saveFile.toString());
-           }else{
-               JOptionPane.showMessageDialog(null,"Error al generar archivo");
-           }
-       }catch(FileNotFoundException e){
-           System.out.println(e);
-       }catch(IOException io){
-           System.out.println(io);
-       }
+//        try{
+//           JFileChooser jFileChooser = new JFileChooser();
+//           jFileChooser.showSaveDialog(this);
+//           File saveFile = jFileChooser.getSelectedFile();
+//           
+//           if(saveFile != null){
+//               saveFile = new File(saveFile.toString()+".xlsx");
+//               Workbook wb = new XSSFWorkbook();
+//               Sheet sheet = wb.createSheet("customer");
+//               
+//               Row rowCol = sheet.createRow(0);
+//               for(int i=0;i<tblNhanVien.getColumnCount();i++){
+//                   Cell cell = rowCol.createCell(i);
+//                   cell.setCellValue(tblNhanVien.getColumnName(i));
+//               }
+//               
+//               for(int j=0;j<tblNhanVien.getRowCount();j++){
+//                   Row row = sheet.createRow(j+1);
+//                   for(int k=0;k<tblNhanVien.getColumnCount();k++){
+//                       Cell cell = row.createCell(k);
+//                       if(tblNhanVien.getValueAt(j, k)!=null){
+//                           cell.setCellValue(tblNhanVien.getValueAt(j, k).toString());
+//                       }
+//                   }
+//               }
+//               FileOutputStream out = new FileOutputStream(new File(saveFile.toString()));
+//               wb.write(out);
+//               wb.close();
+//               out.close();
+//               openFile(saveFile.toString());
+//           }else{
+//               JOptionPane.showMessageDialog(null,"Error al generar archivo");
+//           }
+//       }catch(FileNotFoundException e){
+//           System.out.println(e);
+//       }catch(IOException io){
+//           System.out.println(io);
+//       }
     }//GEN-LAST:event_btnXuatexActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed

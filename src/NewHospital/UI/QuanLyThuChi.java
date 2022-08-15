@@ -18,11 +18,11 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//import org.apache.poi.ss.usermodel.Cell;
+//import org.apache.poi.ss.usermodel.Row;
+//import org.apache.poi.ss.usermodel.Sheet;
+//import org.apache.poi.ss.usermodel.Workbook;
+//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class QuanLyThuChi extends javax.swing.JInternalFrame {
@@ -763,44 +763,44 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnLastActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try{
-           JFileChooser jFileChooser = new JFileChooser();
-           jFileChooser.showSaveDialog(this);
-           File saveFile = jFileChooser.getSelectedFile();
-           
-           if(saveFile != null){
-               saveFile = new File(saveFile.toString()+".xlsx");
-               Workbook wb = new XSSFWorkbook();
-               Sheet sheet = wb.createSheet("customer");
-               
-               Row rowCol = sheet.createRow(0);
-               for(int i=0;i<tblQuanLyThuChi.getColumnCount();i++){
-                   Cell cell = rowCol.createCell(i);
-                   cell.setCellValue(tblQuanLyThuChi.getColumnName(i));
-               }
-               
-               for(int j=0;j<tblQuanLyThuChi.getRowCount();j++){
-                   Row row = sheet.createRow(j+1);
-                   for(int k=0;k<tblQuanLyThuChi.getColumnCount();k++){
-                       Cell cell = row.createCell(k);
-                       if(tblQuanLyThuChi.getValueAt(j, k)!=null){
-                           cell.setCellValue(tblQuanLyThuChi.getValueAt(j, k).toString());
-                       }
-                   }
-               }
-               FileOutputStream out = new FileOutputStream(new File(saveFile.toString()));
-               wb.write(out);
-               wb.close();
-               out.close();
-               openFile(saveFile.toString());
-           }else{
-               JOptionPane.showMessageDialog(null,"Error al generar archivo");
-           }
-       }catch(FileNotFoundException e){
-           System.out.println(e);
-       }catch(IOException io){
-           System.out.println(io);
-       }
+//        try{
+//           JFileChooser jFileChooser = new JFileChooser();
+//           jFileChooser.showSaveDialog(this);
+//           File saveFile = jFileChooser.getSelectedFile();
+//           
+//           if(saveFile != null){
+//               saveFile = new File(saveFile.toString()+".xlsx");
+//               Workbook wb = new XSSFWorkbook();
+//               Sheet sheet = wb.createSheet("customer");
+//               
+//               Row rowCol = sheet.createRow(0);
+//               for(int i=0;i<tblQuanLyThuChi.getColumnCount();i++){
+//                   Cell cell = rowCol.createCell(i);
+//                   cell.setCellValue(tblQuanLyThuChi.getColumnName(i));
+//               }
+//               
+//               for(int j=0;j<tblQuanLyThuChi.getRowCount();j++){
+//                   Row row = sheet.createRow(j+1);
+//                   for(int k=0;k<tblQuanLyThuChi.getColumnCount();k++){
+//                       Cell cell = row.createCell(k);
+//                       if(tblQuanLyThuChi.getValueAt(j, k)!=null){
+//                           cell.setCellValue(tblQuanLyThuChi.getValueAt(j, k).toString());
+//                       }
+//                   }
+//               }
+//               FileOutputStream out = new FileOutputStream(new File(saveFile.toString()));
+//               wb.write(out);
+//               wb.close();
+//               out.close();
+//               openFile(saveFile.toString());
+//           }else{
+//               JOptionPane.showMessageDialog(null,"Error al generar archivo");
+//           }
+//       }catch(FileNotFoundException e){
+//           System.out.println(e);
+//       }catch(IOException io){
+//           System.out.println(io);
+//       }
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

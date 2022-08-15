@@ -59,7 +59,7 @@ public class DanhSachKhamDAO {
         return list.size() > 0 ? list.get(0) : null;
     }
     public void insertBN(TT_BenhNhan model){
-            String sql = "INSERT INTO BenhNhan (MaBN, HoTen, GioiTinh, NgaySinh, SoDT, Mail, CMND, DiaChi)"
+            String sql = "INSERT INTO BenhNhan (MaBN, HoTen, GioiTinh, NgaySinh, SoDT, Email, CMND, DiaChi)"
                 + " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             JDBC.executeUpdate(sql, 
                     model.getMaBN(),

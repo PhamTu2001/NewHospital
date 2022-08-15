@@ -11,39 +11,33 @@ import java.util.Date;
  * @author yukth
  */
 public class PhieuKham {
-    private int soHoSo;
-    private Date ngayLap;
-    private String bsKham;
-    private String ghiChu;
-    private String chuanDoanBenh;
-    private String ketLuan;
-    private float tienKham;
-    private String maBN;
-    private String maNV;
-
-    public PhieuKham(int soHoSo, Date ngayLap, String bsKham, String ghiChu, String chuanDoanBenh, String ketLuan, float tienKham, String maBN, String maNV) {
-        this.soHoSo = soHoSo;
-        this.ngayLap = ngayLap;
-        this.bsKham = bsKham;
-        this.ghiChu = ghiChu;
-        this.chuanDoanBenh = chuanDoanBenh;
-        this.ketLuan = ketLuan;
-        this.tienKham = tienKham;
-        this.maBN = maBN;
-        this.maNV = maNV;
-    }
+   private Date ngayLap;
+   private String ghiChu;
+   private String chuanDoan;
+   private String ketLuan;
+   private String maBN;
+   private String maNV;
+   private int sTT;
+   private  String tinhTrang;
+   private boolean trangThai;
+   private boolean loaiBN;
 
     public PhieuKham() {
-        
-    }
-    
-    public int getSoHoSo() {
-        return soHoSo;
     }
 
-    public void setSoHoSo(int soHoSo) {
-        this.soHoSo = soHoSo;
+    public PhieuKham( Date ngayLap, String ghiChu, String chuanDoan, String ketLuan, String maBN, String maNV,int sTT, String tinhTrang, boolean trangThai, boolean loaiBN) {
+        this.ngayLap = ngayLap;
+        this.ghiChu = ghiChu;
+        this.chuanDoan = chuanDoan;
+        this.ketLuan = ketLuan;
+        this.maBN = maBN;
+        this.maNV = maNV;
+        this.sTT=sTT;
+        this.tinhTrang = tinhTrang;
+        this.trangThai = trangThai;
+        this.loaiBN = loaiBN;
     }
+
 
     public Date getNgayLap() {
         return ngayLap;
@@ -51,14 +45,6 @@ public class PhieuKham {
 
     public void setNgayLap(Date ngayLap) {
         this.ngayLap = ngayLap;
-    }
-
-    public String getBsKham() {
-        return bsKham;
-    }
-
-    public void setBsKham(String bsKham) {
-        this.bsKham = bsKham;
     }
 
     public String getGhiChu() {
@@ -69,12 +55,12 @@ public class PhieuKham {
         this.ghiChu = ghiChu;
     }
 
-    public String getChuanDoanBenh() {
-        return chuanDoanBenh;
+    public String getChuanDoan() {
+        return chuanDoan;
     }
 
-    public void setChuanDoanBenh(String chuanDoanBenh) {
-        this.chuanDoanBenh = chuanDoanBenh;
+    public void setChuanDoan(String chuanDoan) {
+        this.chuanDoan = chuanDoan;
     }
 
     public String getKetLuan() {
@@ -83,14 +69,6 @@ public class PhieuKham {
 
     public void setKetLuan(String ketLuan) {
         this.ketLuan = ketLuan;
-    }
-
-    public float getTienKham() {
-        return tienKham;
-    }
-
-    public void setTienKham(float tienKham) {
-        this.tienKham = tienKham;
     }
 
     public String getMaBN() {
@@ -108,7 +86,38 @@ public class PhieuKham {
     public void setMaNV(String maNV) {
         this.maNV = maNV;
     }
-    
-    
-    
+
+    public String getTinhTrang() {
+        return tinhTrang;
+    }
+
+    public int getsTT() {
+        return sTT;
+    }
+
+    public void setsTT(int sTT) {
+        this.sTT = sTT;
+    }
+
+    public void setTinhTrang(String tinhTrang) {
+        this.tinhTrang = tinhTrang;
+    }
+
+    public boolean isTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(boolean trangThai) {
+        this.trangThai = trangThai;
+    }
+
+    public boolean isLoaiBN() {
+        return loaiBN;
+    }
+
+    public void setLoaiBN(boolean loaiBN) {
+        this.loaiBN = loaiBN;
+    }
+   
+   
 }
