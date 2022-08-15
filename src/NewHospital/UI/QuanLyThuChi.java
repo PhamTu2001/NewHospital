@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,7 +28,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class QuanLyThuChi extends javax.swing.JInternalFrame {
 
-    
+    NumberFormat currentLocale = NumberFormat.getInstance();
     public QuanLyThuChi() {
         initComponents();
         init();
@@ -50,8 +51,8 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
                  tc.getMaGD(),
                  tc.getNoiDung(),
                  XDate.toString(tc.getNgayThucHien()),
-                 tc.getMaNV(),
-                 tc.getSoTien(),
+                 tc.getMaNV(),                
+                 currentLocale.format(tc.getSoTien()),
                  tc.isLoai() ? "Thu" : "Chi",  
                 };
                 model.addRow(row);
@@ -67,7 +68,7 @@ public class QuanLyThuChi extends javax.swing.JInternalFrame {
         txtNgayThucHien.setText(XDate.toString(tc.getNgayThucHien(),"dd/MM/yyyy"));
         txtMaNV.setText(tc.getMaNV());
         txtNoiDungGiaoDich.setText(tc.getNoiDung());
-        txtSoTienGiaoDich.setText(String.valueOf(tc.getSoTien()));
+        txtSoTienGiaoDich.setText(currentLocale.format(tc.getSoTien()));
         if (tc.isLoai()) {
             rdoThu.setSelected(true);
         } else {
